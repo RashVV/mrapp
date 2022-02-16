@@ -1,5 +1,5 @@
-import axios from "axios";
 import {useState, useEffect} from "react";
+import {axiosInstance} from "../api/api";
 
 const useAxios = ({ url, method, body = null, headers = null }) => {
     const [response, setResponse] = useState(null);
@@ -7,7 +7,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
     const [loading, setLoading] = useState(true);
 
     const fetchData = () => {
-        axios[method](url, JSON.parse(headers), JSON.parse(body))
+        axiosInstance[method](url, JSON.parse(headers), JSON.parse(body))
             .then((res) => {
                 setResponse(res.data);
             })
@@ -25,4 +25,4 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
     return { response, error, loading };
 };
 
-export useAxios;
+export default useAxios;

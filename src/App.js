@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import LoginBtn from './Components/LoginBtn';
 import Menu0 from './Components/Menu0';
@@ -7,9 +8,22 @@ import Menu3 from './Components/Menu3';
 import Menu4 from './Components/Menu4';
 import Menu5 from './Components/Menu5';
 import SearchBox from './Components/SearchBox';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+//import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 
+/*componentDidMount() {
+  const db = firebase.database();
+  console.log(db)
+};*/
 
 function App() {
+  React.useEffect(() => {
+    //const db = firebase.database();
+    //console.log(db)
+  }, []);
   return (
     <div id="container">
   <div id="one">
@@ -39,7 +53,6 @@ function App() {
    <div id="nine">
      <SearchBox />
    </div>
-   <spam></spam>
    <div id="ten">
      <LoginBtn />
    </div>

@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# cli tool
+/firebase-tools-instant-win.exe
+
 # testing
 /coverage
 

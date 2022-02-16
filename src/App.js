@@ -8,26 +8,18 @@ import Menu3 from './Components/Menu3';
 import Menu4 from './Components/Menu4';
 import Menu5 from './Components/Menu5';
 import SearchBox from './Components/SearchBox';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-//import { initializeApp } from "firebase/app";
-//import { getAnalytics } from "firebase/analytics";
+import logo from './image/logo.png'
 
-/*componentDidMount() {
-  const db = firebase.database();
-  console.log(db)
-};*/
+
 
 function App() {
   React.useEffect(() => {
-    //const db = firebase.database();
-    //console.log(db)
+    
   }, []);
   return (
     <div id="container">
   <div id="one">
-  <p><a href="/" style={{color: "white" }} >MovieRoom App</a></p>
+  <p><a href="/" ><img src={logo} alt='MovieRoom App' width="80px" height="80px"/></a></p>
    </div>
    <div id="two">
    <Menu0 />

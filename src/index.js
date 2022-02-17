@@ -3,32 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import firebase from 'firebase/compat/app';
-import { initializeApp } from 'firebase/app';
-import { getDatabase } from "firebase/database";
+import AuthProvider from './provider/AuthProvider'
+import {BrowserRouter} from 'react-router-dom'
+//import { getDatabase } from "firebase/database";
 
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTHDOMAIN,
-  databaseURL: process.env.REACT_APP_BASEURL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID
-};
 
-firebase.initializeApp(firebaseConfig);
-const app = initializeApp(firebaseConfig);
 
 // Get a reference to the database service
-const database = getDatabase(app);
-console.log(database);
+//const database = getDatabase(app);
+//console.log(database);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+  <AuthProvider>
     <App />
-  </React.StrictMode>,
+  </AuthProvider>
+</BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  auth,
-  registerWithEmailAndPassword,
-  signInWithGoogle,
-} from "../../firebase";
-import Header from "../Header/Header";
+import {auth, registerWithEmailAndPassword, signInWithGoogle,} from "../../firebase";
 import "./Register.css";
 function Register() {
   const [email, setEmail] = useState("");
@@ -56,7 +51,7 @@ function Register() {
           Register with Google
         </button>
         <div>
-          Already have an account? <Link to="/">Login</Link> now.
+          Already have an account? <Link to="/login">Login</Link> now.
         </div>
       </div>
     </div>

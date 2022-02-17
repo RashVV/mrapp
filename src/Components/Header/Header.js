@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./Header.css";
 import LoginBtn from '../Header/LoginBtn';
 import Menu0 from '../Header/Menu0';
 import Menu1 from '../Header/Menu1';
@@ -7,7 +8,7 @@ import Menu3 from '../Header/Menu3';
 import Menu4 from '../Header/Menu4';
 import Menu5 from '../Header/Menu5';
 import SearchBox from '../Header/SearchBox';
-import logo from '../../image/logo.png'
+import logo from '../../image/logo.png';
 
 function Header() {
     return (

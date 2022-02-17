@@ -8,14 +8,14 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBsv1HjgkHy75CPKqYQvKsdmHZqo-R-3sw",
-  authDomain: "movie-room-app.firebaseapp.com",
-  databaseURL: "https://movie-room-app-default-rtdb.firebaseio.com",
-  projectId: "movie-room-app",
-  storageBucket: "movie-room-app.appspot.com",
-  messagingSenderId: "873323191925",
-  appId: "1:873323191925:web:a1798269fbe0720181a23c",
-  measurementId: "G-C6MPM29FT4"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_BASEURL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 firebase.initializeApp(firebaseConfig);

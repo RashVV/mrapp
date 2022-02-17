@@ -1,4 +1,4 @@
-/ These samples are intended for Web so this import would normally be
+// These samples are intended for Web so this import would normally be
 // done in HTML however using modules here is more convenient for
 // ensuring sample correctness offline.
 import firebase from "firebase/app";

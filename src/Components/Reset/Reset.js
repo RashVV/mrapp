@@ -6,6 +6,7 @@ import { auth, sendPasswordReset } from "../../firebase";
 import "./Reset.css";
 function Reset() {
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {

@@ -3,22 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AuthProvider from './provider/AuthProvider'
-import {BrowserRouter} from 'react-router-dom'
-//import { getDatabase } from "firebase/database";
 
-
-
-// Get a reference to the database service
-//const database = getDatabase(app);
-//console.log(database);
 
 ReactDOM.render(
-  <BrowserRouter>
-  <AuthProvider>
-    <App />
-  </AuthProvider>
-</BrowserRouter>,
+  <React.StrictMode>
+     <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

@@ -4,7 +4,6 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Reset from "./Components/Reset/Reset";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Header from "./Components/Header/Header";
 
 function App() {
   return (

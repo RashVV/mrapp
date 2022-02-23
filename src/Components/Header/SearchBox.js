@@ -9,9 +9,9 @@ import InputBase from '@mui/material/InputBase';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: "black",
+  backgroundColor: 'black',
   '&:hover': {
-    backgroundColor: "#303030",
+    backgroundColor: '#303030',
   },
   marginLeft: 0,
   width: '100%',
@@ -48,16 +48,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchBox() {
+export function SearchBox() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="primary">
+      <AppBar position='static' color='primary'>
         <Toolbar>
           <Search>
             <SearchIconWrapper>
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Швидкий пошук..."
+              placeholder='Швидкий пошук...'
               inputProps={{ 'aria-label': 'Пошук' }}
             />
           </Search>

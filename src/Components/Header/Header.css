@@ -3,10 +3,39 @@ button#basic-button {
     color: #FFFFCC;
     font-family: Arial, Helvetica, sans-serif;
   }
-  button#basic-button:hover {
-    color: #FF5032;
+  /*button#basic-button:hover{
+    color: red;
+  }  */
+  .css-1w1rijm-MuiButtonBase-root-MuiButton-root:hover{
+    color: red;
+  }
+  .nav-items {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    width: auto;
+    justify-content: flex-end;
+    margin-right: auto;
   }
   
+  .nav-item {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 16px;
+    border-radius: 5px;
+  }
+  
+  .nav-item a:hover {
+    background: rgb(0, 212, 212);
+  }
   #container {
     background-color: #303030;
     width:100%;
@@ -23,9 +52,26 @@ button#basic-button {
     background-color: #303030;
     display:inline-block;
     }
-    #two {
+    .maine__menuList{
+        display: inline-flex;
+    }
+    .menu__button:hover{
+      color: #FF5032;
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+      
+    }
+    .menuTitle{
+      list-style-type: none;
+      margin: 10px;
+    }   
+    .two {
     background-color: #303030;
-    display:inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     }
     #three {
     background-color: #303030;

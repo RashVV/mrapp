@@ -24,10 +24,15 @@ import Trailers from './Pages/Trailers';
 import TVseries from './Pages/TVseries';
 import Videos from './Pages/Videos';
 import Header from './Components/Header/Header'
+import Footer from "./layout/footer";
+import useAxios from "./hooks/axios.hook";
+import {Routes, Route} from "react-router-dom"
 
 function App() {
+  // Example usage
+  // const {response} = useAxios({url:'/network/1',method: 'get'})
   return (
-    <div className='app'>
+    <div>
       <Router>
         <Header />
         <Routes>
@@ -56,8 +61,8 @@ function App() {
           <Route exact path='/reset' element={<Reset />} />
           <Route exact path='/dashboard' element={<Dashboard />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
-  );
-}
-export default App;
+  )
+};

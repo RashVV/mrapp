@@ -25,8 +25,7 @@ import TVseries from './Pages/TVseries';
 import Videos from './Pages/Videos';
 import Header from './Components/Header/Header'
 import Footer from "./layout/footer";
-import useAxios from "./hooks/axios.hook";
-import {Routes, Route} from "react-router-dom"
+//import useAxios from "./hooks/axios.hook";
 
 function App() {
   // Example usage

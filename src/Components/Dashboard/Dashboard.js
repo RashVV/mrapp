@@ -30,11 +30,11 @@ function Dashboard() {
     <div className='dashboard'>
        <div className='dashboard__container'>
         Logged in as
-         <div>{name}</div>
-         <div>{user?.email}</div>
-         <button className='dashboard__btn' onClick={logout}>
-          Logout
-         </button>
+         <div className='element'>{name}</div>
+         <div className='element'>{user?.email}</div>
+          <button className='dashboard__btn' onClick={logout}>
+            Logout
+          </button>
        </div>
      </div>
   );

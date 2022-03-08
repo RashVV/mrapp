@@ -5,14 +5,10 @@ import { SearchBox } from './SearchBox';
 import logo from '../../image/logo.png';
 import MenuButton from './MenuButton';
 
-
-
-
-
 function Header( ) {
     return (
-   <div id='container'>
-        <div id='one'>
+   <div className='container'>
+        <div className='one'>
          <p>
           <a href='/' ><img src={logo} alt='MovieRoom App' width='80px' height='80px'/></a>
          </p>
@@ -20,10 +16,10 @@ function Header( ) {
         <div className='two' >
          <MenuButton /> 
         </div>
-        <div id='nine'>
+        <div>
          <SearchBox />
         </div>
-        <div id='ten'>
+        <div>
          <LoginBtn />
        </div>
     </div>

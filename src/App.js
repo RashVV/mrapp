@@ -32,8 +32,7 @@ function App() {
   // const {response} = useAxios({url:'/network/1',method: 'get'})
   return (
     <div>
-      <Router>
-        <Header />
+      <Header />
         <Routes>
           <Route path='/' element={<div>Home</div>} />
           <Route exact path='/login' element={<Login />} />
@@ -61,7 +60,8 @@ function App() {
           <Route exact path='/dashboard' element={<Dashboard />} />
         </Routes>
         <Footer />
-      </Router>
     </div>
   )
 };
+
+export default App;

@@ -22,15 +22,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
+
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'white',
@@ -55,12 +47,10 @@ export function SearchBox() {
       <AppBar position='static' style={{ color: '#e8ebed', border: '1px solid #e8ebed', backgroundColor: '#1d1e1e' }} >
         <Toolbar>
           <Search>
-            <SearchIconWrapper>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder='Швидкий пошук...'
-              inputProps={{ 'aria-label': 'Пошук' }}
-            />
+              <StyledInputBase
+                placeholder='Search...'
+                inputProps={{ 'aria-label': 'Search' }}
+              />
           </Search>
         </Toolbar>
       </AppBar>

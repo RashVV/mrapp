@@ -17,9 +17,10 @@ function Reset() {
     <div className='reset'>
       <div className='reset__container'>
         <input
-          type='text'
+          type='email'
           className='reset__textBox'
           value={email}
+          pattern='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
           onChange={(e) => setEmail(e.target.value)}
           placeholder='E-mail Address'
         />

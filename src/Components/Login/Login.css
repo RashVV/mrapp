@@ -17,6 +17,9 @@
     font-size: 18px;
     margin-bottom: 10px;
   }
+  .login__textBox:invalid {
+    color: red;
+  }
   .login__btn {
     padding: 10px;
     font-size: 18px;

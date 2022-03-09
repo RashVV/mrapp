@@ -21,10 +21,11 @@ function Login() {
     <div className='login'>
       <div className='login__container'>
         <input
-          type='text'
+          type='email'
           className='login__textBox'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          pattern='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
           placeholder='E-mail Address'
         />
         <input

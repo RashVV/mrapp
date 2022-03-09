@@ -29,10 +29,11 @@ function Register() {
           placeholder='Full Name'
         />
         <input
-          type='text'
+          type='email'
           className='register__textBox'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          pattern='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
           placeholder='E-mail Address'
         />
         <input

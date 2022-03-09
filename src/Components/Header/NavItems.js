@@ -38,7 +38,7 @@
             },
         ];
 
-    export const PremieresDropdown = [
+    export const Premieres = [
             {
                 id: 1,
                 title: 'In the movies',
@@ -59,7 +59,7 @@
             },
             ];
     
-    export const AllmuviesDropdown = [
+    export const Allmuvies = [
             {
                 id: 1,
                 title: 'Search movies',
@@ -86,7 +86,7 @@
             },
          ];
         
-        export const TVseriesDropdown = [
+        export const TVseries = [
             {
                 id: 1,
                 title: 'Popular',
@@ -107,7 +107,7 @@
               },    
             ];
         
-        export const TapeDropdown = [
+        export const Tape = [
             {
                 id: 1,
                 title: 'Friends',
@@ -122,7 +122,7 @@
               },
             ];
        
-        export const VideosDropdown = [
+        export const Videos = [
             {
                 id: 1,
                 title: 'Trailers',

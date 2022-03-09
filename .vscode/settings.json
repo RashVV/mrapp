@@ -12,6 +12,7 @@
         "Трейлери",
         "AUTHDOMAIN",
         "Firestore",
-        "labelledby"
+        "labelledby",
+        "popuptext"
     ]
 }

@@ -5,8 +5,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 
-
-
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -21,8 +19,6 @@ const Search = styled('div')(({ theme }) => ({
     width: 'auto',
   },
 }));
-
-
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'white',
@@ -49,8 +45,7 @@ export function SearchBox() {
           <Search>
               <StyledInputBase
                 placeholder='Search...'
-                inputProps={{ 'aria-label': 'Search' }}
-              />
+                inputProps={{ 'aria-label': 'Search' }}/>
           </Search>
         </Toolbar>
       </AppBar>

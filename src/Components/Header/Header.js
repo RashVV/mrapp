@@ -3,25 +3,27 @@ import './Header.css';
 import LoginBtn from './LoginBtn';
 import { SearchBox } from './SearchBox';
 import logo from '../../image/logo.png';
-import MenuButton from './MenuButton';
+import MenuPopups from './MenuPopups';
 
 function Header( ) {
-    return (
+  return (
    <div className='container'>
-        <div className='one'>
-         <p>
-          <a href='/' ><img src={logo} alt='MovieRoom App' width='80px' height='80px'/></a>
-         </p>
-        </div> 
-        <div className='two' >
-         <MenuButton /> 
-        </div>
-        <div>
-         <SearchBox />
-        </div>
-        <div>
-         <LoginBtn />
-       </div>
+      <div className='one'>
+        <p>
+          <a href='/' >
+            <img src={logo} alt='MovieRoom App' width='80px' height='80px'/>
+          </a>
+        </p>
+      </div> 
+      <div className='two' >
+        <MenuPopups /> 
+      </div>
+      <div>
+        <SearchBox />
+      </div>
+      <div>
+        <LoginBtn />
+      </div>
     </div>
   )
 }

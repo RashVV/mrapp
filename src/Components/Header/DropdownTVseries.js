@@ -3,7 +3,7 @@ import { TVSeries } from "./NavItems";
 import { Link } from "react-router-dom";
 
 export default function DropdownTVSeries() {
-  const [dropdown, setDropdown] = useState(false); 
+  const [dropdown, setDropdown] = useState(false);
     return (
       <div className='popuptext3'>
         <ul className={dropdown ? 'nav-item clicked' : 'nav-item'}
@@ -20,7 +20,7 @@ export default function DropdownTVSeries() {
                 </li>
               );
             })}
-          </ul> 
+          </ul>
       </div>
     );
 }

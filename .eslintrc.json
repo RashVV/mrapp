@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "react-app/jest"],
+  "rules": {
+    "no-duplicate-imports": "error",
+    "eol-last": "error",
+    "indent": ["error", 2],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }]
+  }
+}

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 function Popular() {
   return (
     <div>Popular</div>
-  )
+  );
 }
 
-export default Popular
+export default Popular;

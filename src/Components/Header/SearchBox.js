@@ -43,9 +43,9 @@ export function SearchBox() {
       <AppBar position='static' style={{ color: '#e8ebed', border: '1px solid #e8ebed', backgroundColor: '#1d1e1e' }} >
         <Toolbar>
           <Search>
-              <StyledInputBase
-                placeholder='Search...'
-                inputProps={{ 'aria-label': 'Search' }}/>
+            <StyledInputBase
+              placeholder='Search...'
+              inputProps={{ 'aria-label': 'Search' }}/>
           </Search>
         </Toolbar>
       </AppBar>

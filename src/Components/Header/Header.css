@@ -21,12 +21,12 @@ button {
 .menu{
       display: flex;
       align-items: center;
-      
+
     }
 .menuTitle{
       list-style-type: none;
       margin: 10px;
-    }    
+    }
 .nav-item {
     list-style: none;
   }
@@ -44,7 +44,7 @@ button {
     display: flex;
   }
 ul .nav-items {
-    display: block; 
+    display: block;
   }
 .nav-items5 {
     display: flex;
@@ -57,6 +57,3 @@ ul.nav-item4.popup:hover{
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
-
-
-    

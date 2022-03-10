@@ -28,15 +28,15 @@ function Dashboard() {
   }, [user, loading]);
   return (
     <div className='dashboard'>
-       <div className='dashboard__container'>
+      <div className='dashboard__container'>
         Logged in as
-         <div className='element'>{name}</div>
-         <div className='element'>{user?.email}</div>
-          <button className='dashboard__btn' onClick={logout}>
+        <div className='element'>{name}</div>
+        <div className='element'>{user?.email}</div>
+        <button className='dashboard__btn' onClick={logout}>
             Logout
-          </button>
-       </div>
-     </div>
+        </button>
+      </div>
+    </div>
   );
 }
 export default Dashboard;

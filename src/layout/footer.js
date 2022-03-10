@@ -10,7 +10,7 @@ export default function Footer() {
     return <footer className="footer">
         <Box bgcolor="text.secondary" color="white">
             <Box px={10} py={5}>
-                <img src={require("../img/logo192.png")} alt="logo" />
+                <img src={require("../image/logo.png")} alt="logo" />
             </Box>
             <Typography variant="caption">
                 © Copyright 2022

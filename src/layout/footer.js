@@ -34,7 +34,7 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Link path="#" color="inherit" align={"center"} gutterBottom>
-                        Contact us
+            Contact us
           </Link>
         </Grid>
       </Grid>

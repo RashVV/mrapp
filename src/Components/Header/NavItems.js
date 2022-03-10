@@ -59,7 +59,7 @@
             },
             ];
     
-    export const Allmuvies = [
+    export const AllMuvies = [
             {
                 id: 1,
                 title: 'Search movies',
@@ -86,7 +86,7 @@
             },
          ];
         
-        export const TVseries = [
+        export const TVSeries = [
             {
                 id: 1,
                 title: 'Popular',

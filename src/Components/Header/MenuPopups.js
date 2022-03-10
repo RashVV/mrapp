@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { NavItems } from './NavItems';
 import DropdownPremiere from "./DropdownPremiere";
 import { Link } from "react-router-dom";
-import DropdownAllmuvies from './DropdownAllmuvies';
-import DropdownTVseries from './DropdownTVseries';
+import DropdownAllMuvies from './DropdownAllMuvies';
+import DropdownTVSeries from './DropdownTVSeries';
 import DropdownTape from './DropdownTape';
 import DropdownVideos from './DropdownVideos';
 import './MenuPopups.css';
 
 export default function MenuButton( ) {  
   const [dropdownPremiere, setDropdown] = useState(false);
-  const [dropdownAllmuvies, setDropdownA] = useState(false);
-  const [dropdownTVseries, setDropdownTV] = useState(false);
+  const [dropdownAllMuvies, setDropdownA] = useState(false);
+  const [dropdownTVSeries, setDropdownTV] = useState(false);
   const [dropdownTape, setDropdownT] = useState(false);
   const [dropdownVideos, setDropdownV] = useState(false);
     return(
@@ -48,7 +48,7 @@ export default function MenuButton( ) {
                   onMouseEnter={() => setDropdownA(true)}
                   onMouseLeave={() => setDropdownA(false)}>
                   <Link to={item.path}>{item.title}</Link>
-                  {dropdownAllmuvies && <DropdownAllmuvies />}
+                  {dropdownAllMuvies && <DropdownAllMuvies />}
                 </li>
               );
             }
@@ -70,7 +70,7 @@ export default function MenuButton( ) {
                       onMouseEnter={() => setDropdownTV(true)}
                       onMouseLeave={() => setDropdownTV(false)}>
                         <Link to={item.path}>{item.title}</Link>
-                          {dropdownTVseries && <DropdownTVseries />}
+                          {dropdownTVSeries && <DropdownTVSeries />}
                     </li>
                 );
               }

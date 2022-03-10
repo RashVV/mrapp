@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Premieres } from "./NavItems";
 import { Link } from "react-router-dom";
 
-export default function Dropdown() {
+export default function DropdownPremiere() {
   const [dropdown, setDropdown] = useState(false);
     return (
       <div className='popuptext1'>

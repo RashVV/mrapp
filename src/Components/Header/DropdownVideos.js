@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Videos } from "./NavItems";
 import { Link } from "react-router-dom";
 
-export default function DropdownV() {
+export default function DropdownVideos() {
   const [dropdown, setDropdown] = useState(false);   
     return (
       <div className='popuptext'>

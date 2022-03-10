@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { NavItems } from './NavItems';
 import DropdownPremiere from "./DropdownPremiere";
 import { Link } from "react-router-dom";
-import DropdownAllMuvies from './DropdownAllMuvies';
+import DropdownAllMovies from './DropdownAllMovies';
 import DropdownTVSeries from './DropdownTVSeries';
 import DropdownTape from './DropdownTape';
 import DropdownVideos from './DropdownVideos';
 import './MenuPopups.css';
 
-export default function MenuButton( ) {  
+export default function MenuButton( ) {
   const [dropdownPremiere, setDropdown] = useState(false);
-  const [dropdownAllMuvies, setDropdownA] = useState(false);
+  const [dropdownAllMovies, setDropdownA] = useState(false);
   const [dropdownTVSeries, setDropdownTV] = useState(false);
   const [dropdownTape, setDropdownT] = useState(false);
   const [dropdownVideos, setDropdownV] = useState(false);
@@ -48,7 +48,7 @@ export default function MenuButton( ) {
                   onMouseEnter={() => setDropdownA(true)}
                   onMouseLeave={() => setDropdownA(false)}>
                   <Link to={item.path}>{item.title}</Link>
-                  {dropdownAllMuvies && <DropdownAllMuvies />}
+                  {dropdownAllMovies && <DropdownAllMovies />}
                 </li>
               );
             }
@@ -150,5 +150,5 @@ export default function MenuButton( ) {
             })}
         </ul>
       </div>
-    ) 
+    )
 }

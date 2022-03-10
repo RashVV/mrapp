@@ -34,7 +34,7 @@
                 title: 'News',
                 path: './news',
                 cName: 'nav-item',
-                
+
             },
         ];
 
@@ -58,8 +58,8 @@
                 cName: 'mov__submenu-item',
             },
             ];
-    
-    export const AllMuvies = [
+
+    export const AllMovies = [
             {
                 id: 1,
                 title: 'Search movies',
@@ -85,7 +85,7 @@
                 cName: 'search__submenu-item',
             },
          ];
-        
+
         export const TVSeries = [
             {
                 id: 1,
@@ -104,9 +104,9 @@
                 title: 'My calendars',
                 path: './shows/calendar',
                 cName: 'show__submenu-item',
-              },    
+              },
             ];
-        
+
         export const Tape = [
             {
                 id: 1,
@@ -121,7 +121,7 @@
                 cName: 'feed__submenu-item',
               },
             ];
-       
+
         export const Videos = [
             {
                 id: 1,

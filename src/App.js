@@ -17,11 +17,11 @@ import Popular from './Pages/Popular';
 import Premieres from './Pages/Premieres';
 import Recommendations from './Pages/Recommendations';
 import Reviews from './Pages/Reviews';
-import Searchbyname from './Pages/Searchbyname';
+import SearchbyName from './Pages/SearchbyName';
 import Soon from './Pages/Soon';
 import Tape from './Pages/Tape';
 import Trailers from './Pages/Trailers';
-import TVseries from './Pages/TVseries';
+import TVSeries from './Pages/TVSeries';
 import Videos from './Pages/Videos';
 import Header from './Components/Header/Header'
 import Footer from "./layout/footer";
@@ -48,11 +48,11 @@ function App() {
           <Route exact path='/movies' element={<Premieres />} />
           <Route exact path='/recommendations/movies' element={<Recommendations />} />
           <Route exact path='/videos/favorites' element={<Reviews />} />
-          <Route exact path='/search/names' element={<Searchbyname />} />
+          <Route exact path='/search/names' element={<SearchbyName />} />
           <Route exact path='/movies/premier' element={<Soon />} />
           <Route exact path='/feed' element={<Tape />} />
           <Route exact path='/videos/trailers' element={<Trailers />} />
-          <Route exact path='/shows' element={<TVseries />} />
+          <Route exact path='/shows' element={<TVSeries />} />
           <Route exact path='/videos' element={<Videos />} />       
           <Route exact path='/feed/favorites' element={<Favorites />} />
           <Route exact path='/register' element={<Register />} />

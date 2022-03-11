@@ -6,11 +6,11 @@ import Reset from './Components/Reset/Reset';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Favorites from './Pages/Favorites';
 import Friends from './Pages/Friends';
-import Allmovies from './Pages/Allmovies';
+import AllMovies from './Pages/AllMovies';
 import Collections from './Pages/Collections';
-import Inthemovies from './Pages/Inthemovies';
-import Mycalendars from './Pages/Mycalendars';
-import Myseries from './Pages/Myseries';
+import IntheMovies from './Pages/IntheMovies';
+import MyCalendars from './Pages/MyCalendars';
+import MySeries from './Pages/MySeries';
 import News from './Pages/News';
 import Online from './Pages/Online';
 import Popular from './Pages/Popular';
@@ -37,11 +37,11 @@ function App() {
           <Route path='/' element={<div>Home</div>} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/feed/friends' element={<Friends />} />
-          <Route exact path='/R2D2' element={<Allmovies />} />
+          <Route exact path='/R2D2' element={<AllMovies />} />
           <Route exact path='/collections/moviroomapp' element={<Collections />} /> 
-          <Route exact path='/movies/cinema' element={<Inthemovies />} />
-          <Route exact path='/shows/calendar' element={<Mycalendars />} />
-          <Route exact path='/shows/my' element={<Myseries />} />
+          <Route exact path='/movies/cinema' element={<IntheMovies />} />
+          <Route exact path='/shows/calendar' element={<MyCalendars />} />
+          <Route exact path='/shows/my' element={<MySeries />} />
           <Route exact path='/news' element={<News />} />
           <Route exact path='/movies/online' element={<Online />} />
           <Route exact path='/shows/popular' element={<Popular />} />

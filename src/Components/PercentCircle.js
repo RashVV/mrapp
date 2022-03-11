@@ -1,0 +1,27 @@
+import React from "react";
+import {buildStyles, CircularProgressbar, CircularProgressbarWithChildren} from "react-circular-progressbar";
+
+export function PercentCircle (props) {
+  const {item} = props;
+  return (
+    <div>
+      <div style={{width: "50px"}}>
+        <CircularProgressbarWithChildren
+          value={item.vote_average}
+          maxValue={10}
+          // text={`${Math.round(item.vote_average)}%`}
+          background
+          backgroundPadding={6}
+          styles={buildStyles({
+            backgroundColor: "#000",
+            textColor: "#fff",
+            textSize:"26",
+            pathColor: "#41BD6C",
+            trailColor: "transparent"
+          })}>
+          <div style={{ fontSize: 12, marginTop: -5, color: "#fff", textAlign: "center" }}>{`${Math.round(item.vote_average)}%`}</div>
+        </CircularProgressbarWithChildren>
+      </div>
+    </div>
+  );
+}

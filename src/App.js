@@ -25,17 +25,21 @@ import TVseries from './pages/TVseries';
 import Videos from './pages/Videos';
 import Header from './Components/Header/Header';
 import Footer from "./layout/footer";
-//import useAxios from "./hooks/axios.hook";
+import useAxios from "./hooks/axios.hook";
+import {AuthPage} from "./pages/authPage";
+import {MainPage} from "./pages/mainPage";
+import {MoviesPage} from "./pages/moviesPage";
+import {PopularMovies} from "./pages/popularMovies";
 
 function App() {
-  // Example usage
-  // const {response} = useAxios({url:'/network/1',method: 'get'})
   return (
     <div>
       <Header />
       <Routes>
         <Route path='/' element={<div>Home</div>} />
         <Route exact path='/login' element={<Login />} />
+        <Route exact path="/popularMovies" element={<PopularMovies/>} />
+        <Route exact path="/movies" element={<MoviesPage/>}/>
         <Route exact path='/feed/friends' element={<Friends />} />
         <Route exact path='/R2D2' element={<Allmovies />} />
         <Route exact path='/collections/moviroomapp' element={<Collections />} />

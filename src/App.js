@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Reset from './Components/Reset/Reset';
@@ -59,7 +59,7 @@ function App() {
           <Route exact path='/reset' element={<Reset />} />
           <Route exact path='/dashboard' element={<Dashboard />} />
         </Routes>
-        <Footer />
+      <Footer />
     </div>
   )
 };

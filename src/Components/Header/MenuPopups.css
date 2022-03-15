@@ -2,6 +2,7 @@
         position: relative;
         display: inline-block;
         cursor: pointer;
+        padding-left: 3px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -58,6 +59,9 @@
         visibility: visible;
         -webkit-animation: fadeIn 1s;
         animation: fadeIn 1s;
+    }
+    .nav-items6 {
+        padding-left: 1px;
     }
     @-webkit-keyframes fadeIn {
         from {opacity: 0;} 

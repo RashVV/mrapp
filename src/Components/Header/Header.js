@@ -8,20 +8,20 @@ import MenuPopups from './MenuPopups';
 function Header( ) {
   return (
    <div className='container'>
-      <div className='one'>
+      <div className='Logo'>
         <p>
           <a href='/' >
-            <img src={logo} alt='MovieRoom App' width='80px' height='80px'/>
+            <img src={logo} alt='MovieRoom App' />
           </a>
         </p>
       </div> 
-      <div className='two' >
+      <div className='nav__menu'>
         <MenuPopups /> 
       </div>
       <div>
         <SearchBox />
       </div>
-      <div>
+      <div className='button'>
         <LoginBtn />
       </div>
     </div>

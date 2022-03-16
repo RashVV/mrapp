@@ -6,12 +6,10 @@ import {config} from "../api/config";
 import {PercentCircle} from "./PercentCircle";
 const width = "w300";
 
-export function MovieCard(props) {
-  const { item } = props;
+export function MovieCard({item}) {
   return (
     <Card className="card">
       <CardActionArea>
-        {/*<img src={config.api_img_url + width + item.poster_path} alt={item.title}/>*/}
         <CardMedia className="card-media" image={config.api_img_url + width + item.poster_path}/>
         <CardContent className="card-content" sx={{ textAlign: "left"}}>
           <PercentCircle item={item}/>

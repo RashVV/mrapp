@@ -15,15 +15,7 @@ const MenuProps = {
   },
 };
 
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-            personName.indexOf(name) === -1
-              ? theme.typography.fontWeightRegular
-              : theme.typography.fontWeightMedium,
-  };
-}
-export function GenresData() {
+export function GenresList() {
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const {response} = useAxios({url: "/genre/movie/list", method: "get"});

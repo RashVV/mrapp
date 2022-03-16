@@ -1,11 +1,10 @@
 import React from "react";
-import {PopularMovieList} from "../components/PopularMovieList";
-import {Sort} from "src/components/Sort";
-import {PopularMovieProvider} from "src/context/PopularMovieProvider";
+import {PopularMovieList} from "../Components/PopularMovieList";
+import {Sort} from "../Components/Sort";
+import {PopularMovieProvider} from "../context/PopularMovieProvider";
 import {Box} from "@mui/material";
 
 export function PopularMovies () {
-  // const {response} = useAxios({url: "/movie/popular", method: "get"})
   return (
     <PopularMovieProvider>
       <div className="App">
@@ -14,13 +13,8 @@ export function PopularMovies () {
           <Box>
             <Sort/>
           </Box>
-
-          {/*<Filter/>*/}
           <PopularMovieList/>
         </div>
-        {/*<div>*/}
-        {/*    {response}*/}
-        {/*</div>*/}
       </div>
     </PopularMovieProvider>
   );

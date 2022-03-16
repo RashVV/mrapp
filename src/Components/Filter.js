@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {Collapse, FormControl, InputLabel, ListItemButton, ListItemText, Paper} from "@mui/material";
+import React, {useState} from "react";
+import {Collapse, ListItemButton, ListItemText, Paper} from "@mui/material";
 import {ExpandLess, ExpandMore} from "@mui/icons-material";
-import {GenresData} from "./GenresData";
+import {GenresList} from "./GenresList";
 
 export function Filter() {
   const [open, setOpen] = useState(false);
@@ -17,16 +17,7 @@ export function Filter() {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <Paper>
-          <GenresData />
-          {/*<ListItemButton sx={{pl: 4}}  >*/}
-          {/*    <ListItemText primary="By genres"/>*/}
-          {/*    /!*{open ? <ExpandLess/> : <ExpandMore/>}*!/*/}
-          {/*</ListItemButton>*/}
-          {/*<Collapse in={open} timeout="auto" unmountOnExit>*/}
-          {/*    <Paper elevation={3}>*/}
-          {/*        <GenresData/>*/}
-          {/*    </Paper>*/}
-          {/*</Collapse>*/}
+          <GenresList />
         </Paper>
       </Collapse>
     </Paper>

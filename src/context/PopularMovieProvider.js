@@ -1,30 +1,23 @@
-
 import React, {useEffect, useReducer, useState} from "react";
 import useAxios from "../hooks/axios.hook";
 import Context from "./context";
+import {reducer} from "./reducer";
+import {usePopularMovies} from "../hooks/popularMovie.hook";
 
-const initialState = {data: [], sortBy: "", filterBy: "", selectedGenres: [], searchParams: '', searchResult: []};
-
-function reducer(state, action) {
-  switch (action.type) {
-  case "descending":
-    return {...state, sortBy: 'descending'};
-  case "ascending":
-    return {...state, sortBy: 'ascending'};
-  case "filterByGenres":
-    return {...state, filterBy: 'filterByGenres', selectedGenres: action.payload};
-  case "search":
-    return {...state, searchParams: action.payload };
-  }
-}
+const initialState = {
+  data: [],
+  sortBy: "",
+  filterBy: "",
+  selectedGenres: [],
+  searchParams: '',
+  searchResult: []
+};
 
 const PopularMovieProvider = ({children}) => {
   const baseSearchUrl  = '/search/movie';
   const [query, setQuery] = useState('');
-  const {response, loading, error} = useAxios({
-    method: "get",
-    url: "/movie/popular"
-  });
+  const {response, loading, error} = usePopularMovies();
+
   const [state, dispatch] = useReducer(reducer, initialState);
   const searchRequest = useAxios({url: `${baseSearchUrl}?query=${query}`, method: "get"});
   const searchResponse = searchRequest.response;
@@ -63,7 +56,13 @@ const PopularMovieProvider = ({children}) => {
   }, [response]);
 
   return (
-    <Context.Provider value={{...state, dispatchAscending, dispatchDescending, dispatchFilterByGenres, dispatchSearch}}>
+    <Context.Provider value={{
+      ...state,
+      dispatchAscending,
+      dispatchDescending,
+      dispatchFilterByGenres,
+      dispatchSearch
+    }}>
       {children}
     </Context.Provider>
   );

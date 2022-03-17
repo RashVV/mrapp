@@ -5,22 +5,29 @@ import {reducer} from "./reducer";
 import {usePopularMovies} from "../hooks/popularMovie.hook";
 
 const initialState = {
-  data: [],
+  collection: [],
+  searchResult: [],
   sortBy: "",
   filterBy: "",
   selectedGenres: [],
   searchParams: '',
-  searchResult: []
+  page: 1,
+  totalPages: 0
 };
 
 const PopularMovieProvider = ({children}) => {
+  const popularMovieUrl = '/movie/popular';
   const baseSearchUrl  = '/search/movie';
   const [query, setQuery] = useState('');
-  const {response, loading, error} = usePopularMovies();
+  // const {response, loading, error} = usePopularMovies();
 
+  const [currentPage, setCurrentPage] = useState(1);
   const [state, dispatch] = useReducer(reducer, initialState);
+
   const searchRequest = useAxios({url: `${baseSearchUrl}?query=${query}`, method: "get"});
   const searchResponse = searchRequest.response;
+  const pageRequest = useAxios({url: `${popularMovieUrl}?page=${currentPage}`, method: "get"});
+  const pageResponse = pageRequest.response;
 
   const dispatchDescending = () => {
     dispatch({type:'descending'});
@@ -37,23 +44,34 @@ const PopularMovieProvider = ({children}) => {
     dispatch({ type: 'search', payload: phrase });
   };
 
+  const dispatchPagination = (currentPage) => {
+    dispatch({type: 'pagination', payload: currentPage});
+  };
+
   useEffect(() => {
     if (state.searchParams){
       setQuery(state.searchParams);
     }
   }, [state.searchParams]);
 
+  useEffect(() =>{
+    if (state.page != null) {
+      setCurrentPage(state.page);
+    }
+  }, [state.page]);
+
   useEffect(() => {
     if(searchResponse && searchResponse.results && searchResponse.results.length) {
       state.searchResult = searchResponse.results;
     }
-  }, [searchResponse]);
+  }, [state, searchResponse]);
 
   useEffect(() => {
-    if (response !== null) {
-      state.data = response.results;
+    if (pageResponse && pageResponse.results && pageResponse.results.length) {
+      state.collection = pageResponse.results;
+      state.totalPages = pageResponse.total_pages;
     }
-  }, [response]);
+  }, [state, pageResponse]);
 
   return (
     <Context.Provider value={{
@@ -61,7 +79,8 @@ const PopularMovieProvider = ({children}) => {
       dispatchAscending,
       dispatchDescending,
       dispatchFilterByGenres,
-      dispatchSearch
+      dispatchSearch,
+      dispatchPagination
     }}>
       {children}
     </Context.Provider>

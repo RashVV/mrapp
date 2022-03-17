@@ -3,8 +3,16 @@ import {Container} from "@mui/material";
 import {MovieCard} from "./MovieCard";
 import { PopularMovieProvider} from "../context/PopularMovieProvider";
 import Context from "../context/context";
+import {PaginationList} from "./PaginationList";
 export function PopularMovieList() {
-  const {data, sortBy, selectedGenres, filterBy, searchParams, searchResult} = useContext(Context);
+  const {
+    collection,
+    sortBy,
+    selectedGenres,
+    filterBy,
+    searchParams,
+    searchResult,
+  } = useContext(Context);
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
   const genresFilter = function (film) {
@@ -39,8 +47,9 @@ export function PopularMovieList() {
       return collection;
     }
   };
-  const filteredList = getFilteredList(data, filterBy);
-  const list = searchParams ? searchResult : getList(filteredList, sortBy);
+
+  let filteredList = getFilteredList(collection, filterBy);
+  let list = searchParams ? searchResult : getList(filteredList, sortBy);
   return (
     <PopularMovieProvider>
       <Container
@@ -58,6 +67,7 @@ export function PopularMovieList() {
         }
         )}
       </Container>
+      <PaginationList />
     </PopularMovieProvider>
   );
 }

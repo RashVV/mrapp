@@ -32,8 +32,6 @@ export function GenresList() {
     }
   }, [selectedGenres]);
 
-
-  const theme = useTheme();
   const handleChange = (event) => {
     const {
       target: { value },

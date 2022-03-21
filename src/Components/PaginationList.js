@@ -5,9 +5,9 @@ import Context from "../context/context";
 
 
 export function PaginationList () {
-  const {dispatchPagination, totalPages} = useContext(Context);
-  const pageChangeHandler = (event, page) => {
-    dispatchPagination(page);
+  const {dispatchChangedPage, totalPages = 1} = useContext(Context);
+  const pageChangeHandler = (event, page = 1) => {
+    dispatchChangedPage(page);
   };
   return (
     <Stack spacing={2}>

@@ -9,9 +9,16 @@ export function reducer(state, action) {
   case "filterByGenres":
     return {...state, filterBy: 'filterByGenres', selectedGenres: action.payload};
   case "search":
-    return {...state, searchParams: action.payload };
-  case "pagination":
-    return {...state, page: action.payload};
+    return {...state, searchResult: action.payload };
+  case "searchActive":
+    return {...state, searchActive: !!action.payload };
+  case "collectionByPage":
+    return {
+      ...state,
+      totalPages: action.payload.total_pages,
+      page: action.payload.page,
+      collection:  action.payload.results
+    };
   default:
     return {...state};  }
 }

@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
 import useAxios from "../hooks/axios.hook";
-import {useTheme} from "@emotion/react";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
 import Context from "../context/context";
 

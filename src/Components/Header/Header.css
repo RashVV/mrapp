@@ -12,7 +12,7 @@
     background-color: #303030;
     display: flex;
     align-items: center;
-    width: fit-content;
+    width: auto;
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
@@ -24,9 +24,7 @@
       justify-content: space-evenly;
     }
     .Logo {
-        width: 45px;
         height: 45px;
-        background-color: #303030;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -35,7 +33,6 @@
           padding-left: 25px;
           display: grid;
           grid-template-columns: repeat(3, auto);
-          grid-gap: 50px;
           list-style-type: none;
         }
         .mobile-option {
@@ -51,8 +48,7 @@
           list-style-type: none;
         }
         .sign-in {
-          padding-right: 50px;
-          align-self: center;
+          position: relative;
         }
         .sign-in :hover {
           color: white;
@@ -78,6 +74,19 @@
             width: 45px;
             height: 45px;
           }
+          .container {
+            background-color: #303030;
+            display: revert;
+            width: auto;
+            justify-content: space-between;
+            padding: 0px 25px;
+            height: 80px; 
+            }
+            .logo-nav {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
           .nav-options {
             display: flex;
             width: 100%;
@@ -128,47 +137,47 @@
         .mobile-menu {
           display: block;
         }
-.nav__menu {
-  display: inline-flex;
-  padding-left: 0%;
-}  
-.maine__menuList{
-        display: inline-flex;
-    }
-.nav-item {
-    list-style: none;
-  }
-.nav-item a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    margin-right: 2rem;
-    border-radius: 5px;
-  }
-.nav-item a:hover {
-       color: #FF5032;
-  }
-.btn__box {
-  display: flex;
-}
-ul.nav-item4.popup:hover{
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-.search {
-  width: 50%;
-  background-color: #8b8f8f;
-}
-.MuiTextField-root > label {
-  color: white;
-}
-#outlined-basic-label {
-  color: white;
-  font-size: larger;
-}
-.search__list {
-  display: none;
-}
+        .nav__menu {
+          display: inline-flex;
+          padding-left: 0%;
+        }  
+        .maine__menuList{
+                display: inline-flex;
+            }
+        .nav-item {
+            list-style: none;
+          }
+        .nav-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            margin-right: 2rem;
+            border-radius: 5px;
+          }
+        .nav-item a:hover {
+              color: #FF5032;
+          }
+        .btn__box {
+          display: flex;
+        }
+        ul.nav-item4.popup:hover{
+          visibility: visible;
+          -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+        }
+        .search {
+          width: 50%;
+          background-color: #8b8f8f;
+        }
+        .MuiTextField-root > label {
+          color: white;
+        }
+        #outlined-basic-label {
+          color: white;
+          font-size: larger;
+        }
+        .search__list {
+          display: none;
+        }
 
     

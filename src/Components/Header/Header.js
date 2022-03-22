@@ -32,14 +32,12 @@ function Header( ) {
               <SearchBox />
             </div>
           </li>
-        </ul>  
-        <ul className="signin-up">
           <li className="sign-in" onClick={closeMobileMenu}>
             <div className='button'>
               <LoginBtn />
             </div>
           </li>
-        </ul>
+        </ul>  
         <div className="mobile-menu" onClick={handleClick}>
           {click ? (
             <CloseMenu className="menu-icon" />

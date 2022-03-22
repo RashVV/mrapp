@@ -27,7 +27,7 @@ function Header( ) {
                  <MenuPopups /> 
               </div>
           </li>
-          <li className="option" onClick={closeMobileMenu}>
+          <li className="option" onClick={handleClick}>
             <div>
               <SearchBox />
             </div>

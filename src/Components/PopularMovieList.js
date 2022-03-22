@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {MovieCard} from "./MovieCard";
 import Context from "../context/context";
+import { Divider, Grid, Typography} from "@mui/material";
 export function PopularMovieList() {
   const {
     collection,
@@ -10,6 +11,7 @@ export function PopularMovieList() {
     searchActive,
     searchResult,
   } = useContext(Context);
+
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
 
@@ -50,16 +52,36 @@ export function PopularMovieList() {
   };
 
   let filteredList = getFilteredList(collection, filterBy);
-  let list = searchActive ? searchResult : getList(filteredList, sortBy);
+  let list = getList(filteredList, sortBy);
+
   return (
     <>
-      {searchActive && !list.length && <div>Films are not found</div>}
-      {list && list.map((item, index) => {
-        return (
-          <MovieCard item={item} />
-        );
+      { searchActive &&
+      <Grid container item xs={12}>
+        <Grid item xs={12}><Typography sx={{mb: 2, px: 2}} variant='h4'>Search Result:</Typography></Grid>
+        {
+          searchResult && !searchResult.length && <Typography variant='h6' sx={{ px: 2}} >Films are not found</Typography>
+        }
+        {
+          searchResult && searchResult.length > 0 && searchResult.map((item, index) => {
+            return (
+              <MovieCard item={item}/>
+            );
+          })
+        }
+        <Divider variant="middle" sx={{my: 3}}>
+          <Typography sx={{mb: 2, px: 2}} variant='h4'> Popular movies list:</Typography>
+        </Divider>
+      </Grid>
       }
-      )}
+      <Grid container item xs={12}>
+        {list && list.map((item, index) => {
+          return (
+            <MovieCard item={item} />
+          );
+        }
+        )}
+      </Grid>
     </>
   );
-}
+};

@@ -9,7 +9,7 @@ export function reducer(state, action) {
   case "filterByGenres":
     return {...state, filterBy: 'filterByGenres', selectedGenres: action.payload};
   case "search":
-    return {...state, searchResult: action.payload };
+    return {...state, searchResult: action.payload ?? []};
   case "searchActive":
     return {...state, searchActive: !!action.payload };
   case "collectionByPage":

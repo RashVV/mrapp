@@ -1,8 +1,6 @@
 import React, {useContext} from "react";
-import {Box} from "@mui/material";
 import {MovieCard} from "./MovieCard";
 import Context from "../context/context";
-import {PaginationList} from "./PaginationList";
 export function PopularMovieList() {
   const {
     collection,
@@ -55,24 +53,13 @@ export function PopularMovieList() {
   let list = searchActive ? searchResult : getList(filteredList, sortBy);
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flex-end",
-          marginRight: "0",
-        }}>
-        {searchActive && !list.length && <div>Films are not found</div>}
-        {list && list.map((item, index) => {
-          return (
-            <MovieCard item={item}/>
-          );
-        }
-        )}
-      </Box>
-      <Box component='div'>
-        <PaginationList />
-      </Box>
+      {searchActive && !list.length && <div>Films are not found</div>}
+      {list && list.map((item, index) => {
+        return (
+          <MovieCard item={item} />
+        );
+      }
+      )}
     </>
   );
 }

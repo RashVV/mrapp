@@ -1,25 +1,19 @@
-import React, {useState} from "react";
-import {Collapse, ListItemButton, ListItemText, Paper} from "@mui/material";
-import {ExpandLess, ExpandMore} from "@mui/icons-material";
+import React from "react";
+import {ListItem, ListItemText, Paper} from "@mui/material";
 import {GenresList} from "./GenresList";
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 export function Filter() {
-  const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <Paper elevation={3}>
-      <ListItemButton onClick={handleClick}>
+      <ListItem>
+        <FilterAltIcon />
         <ListItemText primary="Filter"/>
-        {open ? <ExpandLess/> : <ExpandMore/>}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <Paper>
-          <GenresList />
-        </Paper>
-      </Collapse>
+      </ListItem>
+      <Paper>
+        <GenresList />
+      </Paper>
     </Paper>
   );
 }

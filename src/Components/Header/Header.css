@@ -95,7 +95,7 @@
             top: 80px;
             left: -100%;
             opacity: 0;
-            transition: all 0.5s ease;
+            transition: all 1.5s ease;
             flex-direction: column;
             list-style-type: none;
             grid-gap: 0px;

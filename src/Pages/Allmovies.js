@@ -6,4 +6,4 @@ function AllMovies() {
   )
 }
 
-export default AllMovies
+export default AllMovies;

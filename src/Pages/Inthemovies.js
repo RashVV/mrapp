@@ -6,4 +6,4 @@ function IntheMovies() {
   )
 }
 
-export default IntheMovies
+export default IntheMovies;

@@ -1,5 +1,5 @@
-import { React, useState } from 'react'
-import data from "./SearchListData.json"
+import  React from 'react';
+import data from "./SearchListData.json";
 
 function SearchList(props) {
     //create a new array by filtering the original array

@@ -6,4 +6,4 @@ function SearchbyName() {
   )
 }
 
-export default SearchbyName
+export default SearchbyName;

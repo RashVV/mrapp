@@ -6,4 +6,4 @@ function TVSeries() {
   )
 }
 
-export default TVSeries
+export default TVSeries;

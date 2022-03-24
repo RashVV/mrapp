@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Premieres } from "./NavItems";
+import { AllMovies } from "./NavItems";
 import { Link } from "react-router-dom";
 
-export default function DropdownPremiere() {
+export default function DropdownAllMovies() {
   const [dropdown, setDropdown] = useState(false);
   return (
-    <div className='popuptext1'>
+    <div className='popuptext2'>
       <ul className={dropdown ? 'nav-item clicked' : 'nav-item'}
+        id = 'myPopup'
         onClick={() => setDropdown(!dropdown)}>
-        {Premieres.map((item) => {
+        {AllMovies.map((item) => {
           return (
             <li key={item.id}>
               <Link to={item.path}

@@ -12,6 +12,7 @@ function Header( ) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   return (
+<<<<<<< HEAD
    <div className='container'>
      <div className='logo-nav'>
         <div className='Logo'>
@@ -45,9 +46,27 @@ function Header( ) {
             <MenuIcon className="menu-icon" />
           )}
         </div>
+=======
+    <div className='container'>
+      <div className='one'>
+        <p>
+          <a href='/' >
+            <img src={logo} alt='MovieRoom App' width='80px' height='80px'/>
+          </a>
+        </p>
+      </div>
+      <div className='two' >
+        <MenuPopups />
+      </div>
+      <div>
+        <SearchBox />
+      </div>
+      <div>
+        <LoginBtn />
+>>>>>>> master
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

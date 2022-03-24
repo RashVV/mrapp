@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 function Recommendations() {
   return (
     <div>Recommendations</div>
-  )
+  );
 }
 
-export default Recommendations
+export default Recommendations;

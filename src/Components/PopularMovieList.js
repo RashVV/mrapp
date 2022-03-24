@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import {MovieCard} from "./MovieCard";
 import Context from "../context/context";
-import { Divider, Grid, Typography} from "@mui/material";
+import {Grid, Typography} from "@mui/material";
+import {PaginationList} from "./PaginationList";
 export function PopularMovieList() {
   const {
     collection,
@@ -56,32 +57,40 @@ export function PopularMovieList() {
 
   return (
     <>
-      { searchActive &&
-      <Grid container item xs={12}>
-        <Grid item xs={12}><Typography sx={{mb: 2, px: 2}} variant='h4'>Search Result:</Typography></Grid>
-        {
-          searchResult && !searchResult.length && <Typography variant='h6' sx={{ px: 2}} >Films are not found</Typography>
-        }
-        {
-          searchResult && searchResult.length > 0 && searchResult.map((item, index) => {
-            return (
-              <MovieCard item={item}/>
-            );
-          })
-        }
-        <Divider variant="middle" sx={{my: 3}}>
-          <Typography sx={{mb: 2, px: 2}} variant='h4'> Popular movies list:</Typography>
-        </Divider>
-      </Grid>
+      {searchActive &&
+        <Grid container item xs={12}>
+          <Grid item xs={12}><Typography sx={{mb: 2, px: 2}} variant='h4'>Search Result:</Typography></Grid>
+          {
+            searchResult && !searchResult.length &&
+              <Typography variant='h6' sx={{px: 2}}>Films are not found</Typography>
+          }
+          {
+            searchResult && searchResult.length > 0 && searchResult.map((item, index) => {
+              return (
+                <MovieCard item={item}/>
+              );
+            })
+          }
+        </Grid>
       }
-      <Grid container item xs={12}>
-        {list && list.map((item, index) => {
-          return (
-            <MovieCard item={item} />
-          );
-        }
-        )}
-      </Grid>
+      {!searchActive &&
+          <Grid container>
+            <Grid container item xs={12}>
+              {list && list.map((item, index) => {
+                return (
+                  <MovieCard item={item}/>
+                );
+              }
+              )}
+            </Grid>
+            <Grid container item sx={{display: "flex",
+              justifyContent: 'center',
+              margin: "0 0 20px 20px"
+            }}>
+              <PaginationList />
+            </Grid>
+          </Grid>
+      }
     </>
   );
-};
+}

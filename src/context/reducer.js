@@ -15,7 +15,6 @@ export function reducer(state, action) {
   case "collectionByPage":
     return {
       ...state,
-      totalPages: action.payload.total_pages,
       page: action.payload.page,
       collection:  action.payload.results
     };

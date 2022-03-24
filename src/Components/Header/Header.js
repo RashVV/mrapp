@@ -12,9 +12,8 @@ function Header( ) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   return (
-<<<<<<< HEAD
-   <div className='container'>
-     <div className='logo-nav'>
+    <div className='container'>
+      <div className='logo-nav'>
         <div className='Logo'>
           <p>
             <a href='/' >
@@ -24,9 +23,9 @@ function Header( ) {
         </div> 
         <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}> 
-              <div className='nav__menu'>
-                 <MenuPopups /> 
-              </div>
+            <div className='nav__menu'>
+              <MenuPopups /> 
+            </div>
           </li>
           <li className="option" onClick={handleClick}>
             <div>
@@ -42,28 +41,10 @@ function Header( ) {
         <div className="mobile-menu" onClick={handleClick}>
           {click ? (
             <CloseMenu className="menu-icon" />
-              ) : (
+          ) : (
             <MenuIcon className="menu-icon" />
           )}
         </div>
-=======
-    <div className='container'>
-      <div className='one'>
-        <p>
-          <a href='/' >
-            <img src={logo} alt='MovieRoom App' width='80px' height='80px'/>
-          </a>
-        </p>
-      </div>
-      <div className='two' >
-        <MenuPopups />
-      </div>
-      <div>
-        <SearchBox />
-      </div>
-      <div>
-        <LoginBtn />
->>>>>>> master
       </div>
     </div>
   );

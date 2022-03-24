@@ -6,8 +6,4 @@ function MyCalendars() {
   );
 }
 
-<<<<<<< HEAD
-export default MyCalendars
-=======
-export default Mycalendars;
->>>>>>> master
+export default MyCalendars;

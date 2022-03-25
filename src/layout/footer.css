@@ -1,18 +1,17 @@
-img {
+.logo {
     width: 100px;
 }
 
 .footer {
     margin: auto;
-    padding-top: 100%;
     text-align: center;
-    top: 0;
+    position: static;
     bottom: 0;
     left: 0;
-    right: 0
+    right: 0;
 }
 
 .divider {
-    margin: 12px auto;
-    width: 30px;
+    margin: 24px auto;
+    width: 60px;
 }

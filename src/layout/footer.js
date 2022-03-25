@@ -10,7 +10,7 @@ export default function Footer() {
   return <footer className="footer">
     <Box bgcolor="text.secondary" color="white">
       <Box px={10} py={5}>
-        <img src={require("../image/logo.png")} alt="logo" />
+        <img src={require("../img/logo192.png")} alt="logo" className="logo" />
       </Box>
       <Typography variant="caption">
                 © Copyright 2022
@@ -33,8 +33,8 @@ export default function Footer() {
           </Link>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-        <Link path="#" color="inherit" align={"center"} gutterBottom>
-            Contact us
+          <Link path="#" color="inherit" align={"center"} gutterBottom>
+                        Contact us
           </Link>
         </Grid>
       </Grid>

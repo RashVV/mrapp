@@ -84,6 +84,11 @@ export const AllMovies = [
     path: './search/names',
     cName: 'search__submenu-item',
   },
+  {
+    id: 5,
+    title: 'Popular movies',
+    path: '/popularMovies'
+  }
 ];
 
 export const TVSeries = [

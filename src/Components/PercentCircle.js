@@ -1,11 +1,12 @@
 import React from "react";
 import {buildStyles, CircularProgressbarWithChildren} from "react-circular-progressbar";
+import "./percentCircle.css";
 
 export function PercentCircle (props) {
   const {item} = props;
   return (
     <div>
-      <div style={{width: "50px"}}>
+      <div className="progress-bar">
         <CircularProgressbarWithChildren
           value={item.vote_average}
           maxValue={10}

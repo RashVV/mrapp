@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
-import useAxios from "../hooks/axios.hook";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
 import Context from "../context/context";
+import {useGenresList} from "../hooks/genresList.hook";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -17,7 +17,7 @@ const MenuProps = {
 export function GenresList() {
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const {response} = useAxios({url: "/genre/movie/list", method: "get"});
+  const {response} = useGenresList();
   const {dispatchFilterByGenres} = useContext(Context);
 
   useEffect(() => {

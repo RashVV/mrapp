@@ -7,10 +7,10 @@ import {PercentCircle} from "./PercentCircle";
 const width = "w300";
 
 export function MovieCard({item}) {
-  const dateFormat = (date) => {
+  const formatDate = (date) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let currDate = new Date(date);
-    let formattedDate = currDate.getDate() + " " + months[currDate.getMonth()] + " " + currDate.getFullYear();
+    let formattedDate = currDate.getDate() + ' ' + months[currDate.getMonth()] + ' ' + currDate.getFullYear();
     return formattedDate;
   };
   return (
@@ -26,7 +26,7 @@ export function MovieCard({item}) {
             {item.title}
           </Typography>
           <Typography variant="subtitle1">
-            {dateFormat(item.release_date)}
+            {formatDate(item.release_date)}
           </Typography>
         </CardContent>
       </CardActionArea>

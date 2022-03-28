@@ -25,7 +25,7 @@ import TVSeries from './Pages/TVSeries';
 import Videos from './Pages/Videos';
 import Header from './Components/Header/Header';
 import Footer from "./layout/footer";
-import {MoviesPage} from "./pages/moviesPage";
+import {MoviesPage} from "./authPages/moviesPage";
 import {PopularMovies} from "./Pages/popularMovies";
 
 function App() {

@@ -40,9 +40,9 @@ function Header( ) {
         </ul>  
         <div className="mobile-menu" onClick={toggleMenu}>
           {toggleMenu ? (
-            <CloseMenu className="menu-icon" />
-          ) : (
             <MenuIcon className="menu-icon" />
+          ) : (
+            <CloseMenu className="menu-icon" />
           )}
         </div>
       </div>

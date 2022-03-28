@@ -8,9 +8,9 @@ import logo from '../../image/logo.png';
 import MenuPopups from './MenuPopups';
 
 function Header( ) {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const toggleMenu = () => setIsMenuActive(!isMenuActive);
+  const closeMobileMenu = () => setIsMenuActive(false);
   return (
     <div className='container'>
       <div className='logo-nav'>
@@ -21,13 +21,13 @@ function Header( ) {
             </a>
           </p>
         </div> 
-        <ul className={click ? "nav-options active" : "nav-options"}>
+        <ul className={isMenuActive ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}> 
             <div className='nav__menu'>
               <MenuPopups /> 
             </div>
           </li>
-          <li className="option" onClick={handleClick}>
+          <li className="option" onClick={toggleMenu}>
             <div>
               <SearchBox />
             </div>
@@ -38,8 +38,8 @@ function Header( ) {
             </div>
           </li>
         </ul>  
-        <div className="mobile-menu" onClick={handleClick}>
-          {click ? (
+        <div className="mobile-menu" onClick={toggleMenu}>
+          {toggleMenu ? (
             <CloseMenu className="menu-icon" />
           ) : (
             <MenuIcon className="menu-icon" />

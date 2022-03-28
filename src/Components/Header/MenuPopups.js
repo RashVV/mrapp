@@ -3,7 +3,7 @@ import { NavItems } from './NavItems';
 import DropdownPremiere from "./DropdownPremiere";
 import { Link } from "react-router-dom";
 import DropdownAllMovies from './DropdownAllMovies';
-import DropdownTVSeries from './DropdownTVseries';
+import DropdownTVSeries from './DropdownTVSeries';
 import DropdownTape from './DropdownTape';
 import DropdownVideos from './DropdownVideos';
 import './MenuPopups.css';

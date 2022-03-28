@@ -1,8 +1,10 @@
 .logo {
     width: 100px;
+    height: 85px;
 }
 
 .footer {
+    padding-top: 100%;
     margin: auto;
     text-align: center;
     position: static;

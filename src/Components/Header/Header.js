@@ -17,7 +17,7 @@ function Header( ) {
         <div className='Logo'>
           <p>
             <a href='/' >
-              <img src={logo} alt='MovieRoom App' />
+              <img className='logo' src={logo} alt='MovieRoom App' />
             </a>
           </p>
         </div> 

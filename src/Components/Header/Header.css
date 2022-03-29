@@ -171,6 +171,10 @@ ul.nav-item4.popup:hover{
 .MuiTextField-root > label {
   color: white;
 }
+.outlined-basic-label {
+  color: white;
+  font-size: larger;
+}
 .search__list {
   display: none;
 }

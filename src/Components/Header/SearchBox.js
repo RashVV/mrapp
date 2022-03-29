@@ -14,8 +14,7 @@ export function SearchBox() {
     <div>
       <div className="search__box">
         <TextField
-          className="search"
-          id="outlined-basic"
+          className="search outlined-basic"
           onChange={inputHandler}
           variant="outlined"
           fullWidth

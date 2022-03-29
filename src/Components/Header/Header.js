@@ -20,16 +20,16 @@ function Header( ) {
               <img className='logo' src={logo} alt='MovieRoom App' />
             </a>
           </p>
-        </div> 
+        </div>
+        <li className="option" onClick={toggleMenu}>
+          <div>
+            <SearchBox />
+          </div>
+        </li>
         <ul className={isMenuActive ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}> 
             <div className='nav__menu'>
               <MenuPopups /> 
-            </div>
-          </li>
-          <li className="option" onClick={toggleMenu}>
-            <div>
-              <SearchBox />
             </div>
           </li>
           <li className="sign-in" onClick={closeMobileMenu}>

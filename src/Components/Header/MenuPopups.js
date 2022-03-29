@@ -145,6 +145,9 @@ export default function MenuButton( ) {
           }
           return (
             <div className='box'>
+              <li>
+                <Link to={item.path}>{item.title}</Link>
+              </li>
             </div>
           );
         })}

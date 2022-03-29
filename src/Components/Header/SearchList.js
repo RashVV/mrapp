@@ -1,5 +1,6 @@
 import  React from 'react';
 import data from "./SearchListData.json";
+import './Header.css';
 
 function SearchList(props) {
   const filteredData = data.filter((el) => {

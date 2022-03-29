@@ -21,15 +21,15 @@ function Header( ) {
             </a>
           </p>
         </div>
-        <li className="option" onClick={toggleMenu}>
-          <div>
-            <SearchBox />
-          </div>
-        </li>
         <ul className={isMenuActive ? "nav-options active" : "nav-options"}>
-          <li className="option" onClick={closeMobileMenu}> 
+          <li className="optic" onClick={closeMobileMenu}> 
             <div className='nav__menu'>
               <MenuPopups /> 
+            </div>
+          </li>
+          <li className="optic" onClick={toggleMenu}>
+            <div>
+              <SearchBox />
             </div>
           </li>
           <li className="sign-in" onClick={closeMobileMenu}>

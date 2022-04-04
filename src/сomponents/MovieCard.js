@@ -4,9 +4,11 @@ import "./movieCard.css";
 import Typography from "@mui/material/Typography";
 import {config} from "../api/config";
 import {PercentCircle} from "./PercentCircle";
+import {useNavigate} from "react-router-dom";
 const width = "w300";
 
 export function MovieCard({item}) {
+  const navigate = useNavigate();
   const formatDate = (date) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let currDate = new Date(date);
@@ -14,7 +16,11 @@ export function MovieCard({item}) {
     return formattedDate;
   };
   return (
-    <Card className="card">
+    <Card className="card"
+      onClick={() => {
+        navigate('/movieDetail/:id', {state: {id: item.id}});
+      } }
+    >
       <CardActionArea>
         <CardMedia className="card-media" image={config.api_img_url + width + item.poster_path}/>
         <CardContent className="card-content" sx={{ textAlign: "left"}}>

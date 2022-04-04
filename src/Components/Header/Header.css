@@ -13,6 +13,7 @@
   padding: 15px;
 }
 .container {
+  color: hsla(0,0%,100%,.8);
   background-color: #303030;
   display: flex;
   align-items: center;
@@ -57,6 +58,7 @@ li.optic {
   list-style-type: none;
 }
 .nav__menu {
+  color: white;
   display: inline-flex;
   list-style-type: none;
   padding-left: 0%;

@@ -22,12 +22,12 @@ function Header( ) {
           </p>
         </div>
         <ul className={isMenuActive ? "nav-options active" : "nav-options"}>
-          <li className="optic" onClick={closeMobileMenu}> 
+          <li className="nav" onClick={closeMobileMenu}> 
             <div className='nav__menu'>
               <MenuPopups /> 
             </div>
           </li>
-          <li className="optic" onClick={toggleMenu}>
+          <li className="search" onClick={toggleMenu}>
             <div>
               <SearchBox />
             </div>

@@ -7,6 +7,7 @@
   border: 1px solid #e8ebed;
   font-size: 0.9rem;
   display: inline-flex;
+  background: linear-gradient(to bottom right, blue, #f7f30b);
 }
 .btn__box {
   display: flex;
@@ -16,12 +17,12 @@
   color: hsla(0,0%,100%,.8);
   background-color: #303030;
   display: flex;
-  align-items: center;
   width: auto;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 40px;
   height: 80px;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-direction: row;
 }
 .logo-nav {
   display: flex;
@@ -38,24 +39,7 @@
   padding-left: 25px;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  list-style-type: none;
-}
-.nav-optic.active {
-  background: #434344;
-  left: 0;
-  opacity: 1;
-  list-style-type: none;
-  transition: all 0.5s ease;
-  z-index: 1;
-  align-content: center;
-  padding-left: 0px;
-}
-li.optic {
-  list-style-type: none;
-}
-.optic {
-  width: max-content;
-  list-style-type: none;
+  align-items: center;
 }
 .nav__menu {
   color: white;
@@ -66,8 +50,7 @@ li.optic {
 .mobile-option {
   display: none;
 }
-.optic :hover {
-  list-style-type: none;
+.nav :hover {
   color: rgb(231, 14, 14);
 }
 .signin-up {
@@ -77,6 +60,8 @@ li.optic {
 }
 .sign-in {
   position: relative;
+  width: max-content;
+  padding-top: 15px;
 }
 .sign-in :hover {
   color: white;
@@ -87,8 +72,12 @@ li.optic {
 .search__list {
   display: none;
 }
+.search {
+  padding-top: 13px;
+}
 ul.popup {
   padding: 3px;
+  width: max-content;
 }
 li.nav-item{
   list-style-type: none;
@@ -96,6 +85,23 @@ li.nav-item{
 .nav-items6 {
   padding: 3px;
 }
+.search__box {
+  width: max-content;
+}
+li.search__box {
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: darkgray;
+  background-image: url(https://images.kinorium.com/web/svg/icon_32_search.svg);
+}
+#mui-1 {
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+}
+#mui-1-label {
+  color: white;
+  }
 @media (max-width: 978px) {
   /*Mobile View */
   .header {
@@ -143,6 +149,7 @@ li.nav-item{
     z-index: 1;
     align-content: center;
     padding-left: 0px;
+    height: 425px;
   }
   .menu-icon {
     width: 45px;
@@ -202,6 +209,7 @@ li.nav-item{
   }
   .search {
     width: 50%;
+    padding-top: inherit;
     background-color: #b1b3b3;
   }
   .MuiTextField-root > label {

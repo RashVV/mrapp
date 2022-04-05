@@ -8,10 +8,10 @@
 
 a {
   text-decoration: none;
-  list-style-type: none;
   color: hsla(0,0%,100%,.8);
 }
 * {
+  list-style-type: none;
   display: revert;
   box-sizing: border-box;
   margin: 0;

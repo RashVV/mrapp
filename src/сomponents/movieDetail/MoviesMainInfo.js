@@ -15,6 +15,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Grid from "@mui/material/Grid";
+import {CrewList} from "./CrewList";
 
 const width = "w500";
 
@@ -35,13 +36,6 @@ export function MoviesMainInfo ({movieDetailResponse, movieCreditsResponse}) {
     return hourDisplay + minDisplay;
   }
 
-  function getDirector (crew) {
-    return crew.find(item => (item.job === 'Director'));
-  }
-  function getWriter (crew) {
-    return crew.find(item => (item.job === 'Writer'));
-  }
-
   const imageUrl = `${config.api_img_url + width}`;
   const styles = {
     gridContainer: {
@@ -53,9 +47,8 @@ export function MoviesMainInfo ({movieDetailResponse, movieCreditsResponse}) {
       backgroundSize: "cover",
     },
   };
-  let genresObj = movieDetailResponse.genres;
+  let genres = movieDetailResponse.genres;
   let productionCountries = movieDetailResponse.production_countries;
-  let movieCrew = movieCreditsResponse.crew;
 
   return (
     <Grid container item xs={12} style={styles.gridContainer} sx={{py: 2, px: 2}}>
@@ -72,7 +65,7 @@ export function MoviesMainInfo ({movieDetailResponse, movieCreditsResponse}) {
           </ListItem>
           <span className='dot-divider'> • </span>
           <ListItem className='list-item-text'>
-            {getGenresNames(genresObj)}
+            {getGenresNames(genres)}
           </ListItem>
           <span className='dot-divider'> • </span>
           <ListItem className='list-item-text'>
@@ -119,22 +112,7 @@ export function MoviesMainInfo ({movieDetailResponse, movieCreditsResponse}) {
         </Box>
         <Typography variant='h5' fontWeight='700' marginBottom='20px'>Overview</Typography>
         <Typography variant='h6' fontWeight='400' >{movieDetailResponse.overview}</Typography>
-        <List className='list-horizontal-display'>
-          <ListItem sx={{ fontSize: 'larger', fontWeight: '700', margin: '20px 0 0 0', padding: '0'}}>
-            {getDirector(movieCrew).name}
-          </ListItem>
-          <ListItem sx={{ fontSize: 'larger', fontWeight: '700', margin: '20px 0 0 0', padding: '0'}}>
-            {getWriter(movieCrew).name}
-          </ListItem>
-        </List>
-        <List className='list-horizontal-display'>
-          <ListItem sx={{ fontSize: 'medium', margin: '0', padding: "0 0"}}>
-            {getDirector(movieCrew).job}
-          </ListItem>
-          <ListItem sx={{ fontSize: 'medium', margin: '0', padding: "0"}}>
-            {getWriter(movieCrew).job}
-          </ListItem>
-        </List>
+        <CrewList movieCreditsResponse={movieCreditsResponse}/>
       </Grid>
     </Grid>
   );

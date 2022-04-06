@@ -18,7 +18,7 @@ export function MovieCard({item}) {
   return (
     <Card className="card"
       onClick={() => {
-        navigate('/movieDetail/:id', {state: {id: item.id}});
+        navigate(`/movie/${item.id}`);
       } }
     >
       <CardActionArea>

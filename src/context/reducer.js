@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function reducer(state, action) {
   switch (action.type) {
   case "descending":

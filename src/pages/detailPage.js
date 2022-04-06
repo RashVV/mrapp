@@ -12,7 +12,7 @@ import NotFound from "../сomponents/NotFound";
 export function DetailPage () {
   const params = useParams();
   const filmId = params.id;
-  const {movieDetailResponse, loading, error} = useMoviesDetail({filmId});
+  const {movieDetailResponse, error} = useMoviesDetail({filmId});
   const {movieCreditsResponse} = useMoviesCredits({filmId});
   return (
     <Grid container xs={12} >

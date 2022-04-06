@@ -30,8 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src",
-    "prepare": "husky install"
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": [
@@ -54,13 +53,6 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-plugin-flowtype": "^8.0.3",
-    "husky": "^7.0.0",
     "prettier": "^2.5.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\"",
-      "pre-push": "npm run lint"
-    }
   }
 }

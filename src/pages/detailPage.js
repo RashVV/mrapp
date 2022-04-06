@@ -12,14 +12,15 @@ import NotFound from "../сomponents/NotFound";
 export function DetailPage () {
   const params = useParams();
   const filmId = params.id;
-  const {movieDetailResponse} = useMoviesDetail({filmId});
+  const {movieDetailResponse, loading, error} = useMoviesDetail({filmId});
   const {movieCreditsResponse} = useMoviesCredits({filmId});
   return (
     <Grid container xs={12} >
       <Grid container item xs={12}>
         {movieDetailResponse && movieCreditsResponse &&
             <MoviesMainInfo movieDetailResponse={movieDetailResponse} movieCreditsResponse={movieCreditsResponse}/>
-        } <NotFound />
+        }
+        {error && <NotFound /> }
       </Grid>
       <Grid container item flexWrap='nowrap' xs={12} >
         <Grid container item className='cast-list'

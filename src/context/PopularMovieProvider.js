@@ -39,7 +39,7 @@ const PopularMovieProvider = ({children}) => {
 
   useEffect(() => {
     fetchCollectionByPageAction(state.page, dispatch);
-  }, []);
+  }, [state.page]);
 
   return (
     <Context.Provider value={{

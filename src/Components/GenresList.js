@@ -29,7 +29,7 @@ export function GenresList() {
     if(selectedGenres.length){
       dispatchFilterByGenres(selectedGenres);
     }
-  }, [selectedGenres]);
+  }, [selectedGenres, dispatchFilterByGenres]);
 
   const handleChange = (event) => {
     const {

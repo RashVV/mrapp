@@ -54,6 +54,7 @@ export function MoviesMainInfo ({movieDetailResponse, movieCreditsResponse}) {
     <Grid container item xs={12} style={styles.gridContainer} sx={{py: 2, px: 2}}>
       <Grid item xs={12} md={4} >
         <img src={`${imageUrl + movieDetailResponse.poster_path}`}
+          alt='Movie poster'
           width='100%'/>
       </Grid>
       <Grid item xs={12} md={8} sx={{px: 2, marginTop: '20px'}}>

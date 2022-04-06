@@ -1,7 +1,6 @@
 import React from 'react';
-import {Card, CardContent, CardMedia, Paper} from "@mui/material";
+import {Card, CardContent, CardMedia} from "@mui/material";
 import {config} from "../../api/config";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 const width = "w500";

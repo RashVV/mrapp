@@ -1,6 +1,7 @@
 .list-horizontal-display {
     display: flex;
     direction: ltr;
+    align-items: center;
 }
 .list-item-text {
     font-size: larger;

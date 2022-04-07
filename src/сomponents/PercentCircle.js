@@ -19,7 +19,7 @@ export function PercentCircle (props) {
             pathColor: "#41BD6C",
             trailColor: "transparent"
           })}>
-          <div style={{ fontSize: 18, color: "#fff", textAlign: "center" }}>{`${Math.round(item.vote_average)}%`}</div>
+          <div style={{ fontSize: 18, color: "#fff", textAlign: "center", marginTop: "-20%" }}>{`${Math.round(item.vote_average)}%`}</div>
         </CircularProgressbarWithChildren>
       </div>
     </div>

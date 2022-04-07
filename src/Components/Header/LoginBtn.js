@@ -6,7 +6,7 @@ export default function FormDialog() {
   return (
     <div className='button'>
       <Button variant='outlined' href='/login'  >
-        Enter or Register
+        Log in or Register
       </Button>
     </div>
   );

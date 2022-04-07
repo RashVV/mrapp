@@ -94,11 +94,15 @@ li.search__box {
   background-color: darkgray;
   background-image: url(https://images.kinorium.com/web/svg/icon_32_search.svg);
 }
-#mui-1 {
-  border: 2px solid white;
-  border-radius: 4px;
+.nav-options.active{
   color: white;
+  text-decoration: none;
+  border: none;
 }
+#mui-1 {
+  height: 3px;
+  background-color: #4b4949;
+  }
 #mui-1-label {
   color: white;
   }
@@ -133,7 +137,7 @@ li.search__box {
     top: 80px;
     left: -100%;
     opacity: 0;
-    transition: all 8.5s ease;
+    transition: all 5.5s ease;
     flex-direction: column;
     list-style-type: none;
     grid-gap: 0px;

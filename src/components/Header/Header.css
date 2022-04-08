@@ -137,8 +137,9 @@ li.search__box {
     top: 80px;
     left: -100%;
     opacity: 0;
-    transition: all 5.5s ease;
+    transition: all 0.5s ease;
     flex-direction: column;
+    transition-delay: 1.5s;
     list-style-type: none;
     grid-gap: 0px;
     align-items: center;

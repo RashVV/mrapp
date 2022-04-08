@@ -1,13 +1,14 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './сomponents/Login/Login';
-import Register from './сomponents/Register/Register';
-import Reset from './сomponents/Reset/Reset';
-import Dashboard from './сomponents/Dashboard/Dashboard';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Reset from './components/Reset/Reset';
+import Dashboard from './components/Dashboard/Dashboard';
 import Favorites from './pages/Favorites';
 import Friends from './pages/Friends';
 import Collections from './pages/Collections';
 import IntheMovies from './pages/IntheMovies';
+import AllMovies from './pages/AllMovies';
 import MyCalendars from './pages/MyCalendars';
 import MySeries from './pages/MySeries';
 import News from './pages/News';
@@ -22,10 +23,10 @@ import Tape from './pages/Tape';
 import Trailers from './pages/Trailers';
 import TVSeries from './pages/TVSeries';
 import Videos from './pages/Videos';
-import Header from './сomponents/Header/Header';
+import Header from './components/Header/Header';
 import Footer from "./layout/footer";
-import {MoviesPage} from "./pages/moviesPage";
-import {PopularMovies} from "./pages/popularMovies";
+import {MoviesPage} from "./pages/MoviesPage";
+import {PopularMovies} from "./pages/PopularMovies";
 import {DetailPage} from "./pages/detailPage";
 
 function App() {

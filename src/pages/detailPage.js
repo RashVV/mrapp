@@ -1,13 +1,13 @@
 import React from "react";
 import {useMoviesDetail} from "../hooks/moviesDetail.hook";
 import {useParams} from "react-router-dom";
-import {MoviesMainInfo} from "../сomponents/movieDetail/MoviesMainInfo";
+import {MoviesMainInfo} from "../components/movieDetail/MoviesMainInfo";
 import Grid from "@mui/material/Grid";
-import {CastCard} from "../сomponents/movieDetail/CastCard";
+import {CastCard} from "../components/movieDetail/CastCard";
 import {useMoviesCredits} from "../hooks/moviesCredits.hook";
-import {MovieAdditionalInfo} from "../сomponents/movieDetail/movieAdditionalInfo";
-import '../сomponents/movieDetail/castList.css';
-import NotFound from "../сomponents/NotFound";
+import {MovieAdditionalInfo} from "../components/movieDetail/movieAdditionalInfo";
+import '../components/movieDetail/castList.css';
+import NotFound from "../components/NotFound";
 
 export function DetailPage () {
   const params = useParams();

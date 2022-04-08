@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-function MoviesPage() {
+export function MoviesPage() {
   return (
-    <div>All movies</div>
+    <div className="App">
+      <p>Movies</p>
+    </div>
   );
 }
-
-export default MoviesPage;

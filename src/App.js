@@ -1,12 +1,9 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Components/Login/Login';
-import Register from './Components/Register/Register';
-import Reset from './Components/Reset/Reset';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Header from './Components/Header/Header';
-import Footer from "./layout/footer";
-
+import Login from './сomponents/Login/Login';
+import Register from './сomponents/Register/Register';
+import Reset from './сomponents/Reset/Reset';
+import Dashboard from './сomponents/Dashboard/Dashboard';
 import Favorites from './pages/Favorites';
 import Friends from './pages/Friends';
 import AllMovies from './pages/AllMovies';
@@ -26,8 +23,11 @@ import Tape from './pages/Tape';
 import Trailers from './pages/Trailers';
 import TVSeries from './pages/TVSeries';
 import Videos from './pages/Videos';
-import {MoviesPage} from "./pages/MoviesPage";
-import {PopularMovies} from "./pages/PopularMovies";
+import Header from './сomponents/Header/Header';
+import Footer from "./layout/footer";
+import {MoviesPage} from "./pages/moviesPage";
+import {PopularMovies} from "./pages/popularMovies";
+import {DetailPage} from "./pages/detailPage";
 
 function App() {
   return (
@@ -60,6 +60,7 @@ function App() {
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/reset' element={<Reset />} />
         <Route exact path='/dashboard' element={<Dashboard />} />
+        <Route path='/movie/:id' element={<DetailPage />} />
       </Routes>
       <Footer />
     </div>

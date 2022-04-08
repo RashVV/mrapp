@@ -1,0 +1,13 @@
+.list-horizontal-display {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+}
+.list-item-text {
+    font-size: larger;
+    justify-content: center;
+    padding-left: 0;
+}
+.dot-divider {
+    font-size: xx-large;
+}

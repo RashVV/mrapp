@@ -6,7 +6,6 @@ import Reset from './сomponents/Reset/Reset';
 import Dashboard from './сomponents/Dashboard/Dashboard';
 import Favorites from './pages/Favorites';
 import Friends from './pages/Friends';
-import AllMovies from './pages/AllMovies';
 import Collections from './pages/Collections';
 import IntheMovies from './pages/IntheMovies';
 import MyCalendars from './pages/MyCalendars';

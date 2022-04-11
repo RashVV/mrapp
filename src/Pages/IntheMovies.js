@@ -1,9 +1,9 @@
 import React from 'react';
 
-function IntheMovies() {
+function InTheMovies() {
   return (
     <div>In the movies</div>
   );
 }
 
-export default IntheMovies;
+export default InTheMovies;

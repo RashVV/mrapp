@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Favorites from './pages/Favorites';
 import Friends from './pages/Friends';
 import Collections from './pages/Collections';
-import IntheMovies from './pages/IntheMovies';
+import InTheMovies from './pages/InTheMovies';
 import AllMovies from './pages/AllMovies';
 import MyCalendars from './pages/MyCalendars';
 import MySeries from './pages/MySeries';
@@ -41,7 +41,7 @@ function App() {
         <Route exact path='/feed/friends' element={<Friends />} />
         <Route exact path='/R2D2' element={<AllMovies />} />
         <Route exact path='/collections/moviroomapp' element={<Collections />} />
-        <Route exact path='/movies/cinema' element={<IntheMovies />} />
+        <Route exact path='/movies/cinema' element={<InTheMovies />} />
         <Route exact path='/shows/calendar' element={<MyCalendars />} />
         <Route exact path='/shows/my' element={<MySeries />} />
         <Route exact path='/news' element={<News />} />

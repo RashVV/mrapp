@@ -5,7 +5,7 @@ import './Header.css';
 export default function FormDialog() {
   return (
     <div className='button'>
-      <Button variant='outlined' href='/login'  >
+      <Button variant='outlined' href='/login' className='button__log' >
         Log in or Register
       </Button>
     </div>

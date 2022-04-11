@@ -13,14 +13,14 @@ export function SearchBox() {
     <div>
       <div className="search__box">
         <TextField
-          className="search outlined-basic"
+          className="search"
           onChange={inputHandler}
           variant="outlined"
           fullWidth
           label="Search"
         />
       </div>
-      <SearchList  input={inputText} />
+      <SearchList input={inputText} />
     </div>
   );
 }

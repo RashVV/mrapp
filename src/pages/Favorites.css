@@ -1,0 +1,14 @@
+.page__container {
+    padding-left: 15px;
+}
+.page__header {
+    display: flex;
+    justify-content: flex-start;
+}
+.page__Name{
+    font-weight: bold;
+    padding-right: 1.3rem;
+}
+.Fav__Movies{
+    padding-right: 1.3rem;
+}

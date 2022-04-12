@@ -17,12 +17,8 @@
   color: rgba(255, 255, 255, 0.8);
   background-color: #303030;
   display: flex;
-  width: auto;
   height: 80px;
-  flex-wrap: nowrap;
   justify-content: space-around;
-  align-items: baseline;
-  flex-direction: row;
 }
 .logo-nav {
   display: flex;
@@ -61,7 +57,6 @@
 .sign-in {
   position: relative;
   width: max-content;
-  padding-top: 15px;
 }
 .sign-in :hover {
   color: white;
@@ -84,16 +79,15 @@ li.nav-item{
 }
 .search__box {
   width: max-content;
+  height: 3.1rem;
 }
 .search {
   color: white;
-  height: 35px;
   background-color: #4b4949;
 }
 .search label {
   color: white;
 }
-
 @media (max-width: 978px) {
   /*Mobile View */
   .header {
@@ -125,7 +119,7 @@ li.nav-item{
     top: 80px;
     left: -100%;
     opacity: 0;
-    transition: all 0.5s 1.5s ease;
+    transition: all 0.5s ease;
     flex-direction: column;
     list-style-type: none;
     grid-gap: 0px;

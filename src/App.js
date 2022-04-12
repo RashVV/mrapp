@@ -28,13 +28,14 @@ import Footer from "./layout/footer";
 import {MoviesPage} from "./pages/moviesPage";
 import {PopularMovies} from "./pages/popularMovies";
 import {DetailPage} from "./pages/detailPage";
+import {MainPage} from "./pages/mainPage";
 
 function App() {
   return (
     <div>
       <Header />
       <Routes>
-        <Route path='/' element={<div>Home</div>} />
+        <Route path='/' element={<MainPage/>} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path="/popularMovies" element={<PopularMovies/>} />
         <Route exact path="/movies" element={<MoviesPage/>}/>

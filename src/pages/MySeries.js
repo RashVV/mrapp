@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Myseries() {
+function MySeries() {
   return (
     <div>My serials</div>
   );
 }
 
-export default Myseries;
+export default MySeries;

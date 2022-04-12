@@ -1,9 +1,9 @@
 import React from 'react';
 
-function TVseries() {
+function TVSeries() {
   return (
     <div>TVseries</div>
   );
 }
 
-export default TVseries;
+export default TVSeries;

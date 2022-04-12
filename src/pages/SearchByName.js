@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Searchbyname() {
+function SearchByName() {
   return (
     <div>Search by name</div>
   );
 }
 
-export default Searchbyname;
+export default SearchByName;

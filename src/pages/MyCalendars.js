@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Mycalendars() {
+function MyCalendars() {
   return (
     <div>My calendars</div>
   );
 }
 
-export default Mycalendars;
+export default MyCalendars;

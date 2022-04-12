@@ -141,3 +141,12 @@ export const Videos = [
     cName: 'videos__submenu-item',
   },
 ];
+export const News = [
+  {
+    id: 1,
+    title: 'News',
+    path: './news',
+    cName: 'news__submenu-item',
+  }
+];
+

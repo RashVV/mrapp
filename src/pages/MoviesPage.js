@@ -1,6 +1,6 @@
 import React from "react";
 
-export function MoviesPage () {
+export function MoviesPage() {
   return (
     <div className="App">
       <p>Movies</p>

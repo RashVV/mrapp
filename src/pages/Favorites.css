@@ -3,12 +3,27 @@
 }
 .page__header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 .page__Name{
     font-weight: bold;
     padding-right: 1.3rem;
 }
-.Fav__Movies{
+.Fav__Movies {
     padding-right: 1.3rem;
+}
+.left_page__header{
+    display: flex;
+}
+.Right_page__header {
+    display: flex;
+}
+.Fav__filter {
+    padding-right: 1rem;
+}
+.Fav__filter__sort {
+    padding-right: 1rem;
+}
+.Fav__filter__order {
+    padding-right: 1rem;
 }

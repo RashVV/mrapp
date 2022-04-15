@@ -1,9 +1,9 @@
 import React from "react";
-import Slider from "../сomponents/home/Slider";
+import Slider from "../components/home/Slider";
 import Grid from "@mui/material/Grid";
-import {TrendingMovieList} from "../сomponents/home/TrendingMovieList";
-import {TrendingShowsList} from "../сomponents/home/TrendingShowsList";
-import {TopRatedMoviesList} from "../сomponents/home/TopRatedMoviesList";
+import {TrendingMovieList} from "../components/home/TrendingMovieList";
+import {TrendingShowsList} from "../components/home/TrendingShowsList";
+import {TopRatedMoviesList} from "../components/home/TopRatedMoviesList";
 
 export function MainPage () {
   return (

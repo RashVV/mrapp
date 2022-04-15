@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Pagination, Navigation } from "swiper";
+import {Autoplay, Pagination, Navigation, Parallax} from "swiper";
 import {usePopularMovies} from "../../hooks/popularMovie.hook";
 import {config} from "../../api/config";
 import './slider.css';
@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import {Button} from "@mui/material";
 import {MovieCrew} from "./MovieCrew";
 import {useNavigate} from "react-router-dom";
+import Box from "@mui/material/Box";
 
 const width = "w500";
 
@@ -26,35 +27,72 @@ export default function Slider () {
     <>
       <Swiper
         slidesPerView={1}
-        spaceBetween={10}
-        loop={true}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        parallax={true}
+        modules={[Autoplay, Pagination, Navigation, Parallax]}
         className='mySwiper'
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
 
+        breakpoints={{
+          340: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+              delay: 3000
+            }
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: true
+            }
+          }
+        }}
       >
         {data.map(item => (
           <SwiperSlide key={item.id} >
             {({ isActive }) => (
-              <Grid container flexDirection='column' style={{
+              <Grid container xs={12} flexDirection='row' sx={{
                 backgroundImage: `linear-gradient(rgb(0 0 0 / 77%), rgb(0 0 0 / 60%)),
            url(${imageUrl + item.backdrop_path})`,
-                width: '100%',
-                height: "500px",
                 backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'}}>
-                <Grid container item xs={7} md={4} display='flex' flexDirection='column' justifyContent='space-between' margin='20px 70px'>
+                backgroundRepeat: 'no-repeat',
+                height:'100%'}}
+              >
+                <Grid container
+                  item
+                  xs={12}
+                  md={7}
+                  px='45px'
+                  py='20px'
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  height='100%'>
                   <Grid item>
-                    <Typography variant='h4' color='#fff' fontWeight={300} margin='20px 0'>
-                      {item.title}
-                    </Typography>
-                    <Typography variant='h6' color='#fff' fontWeight={300}>
-                      {item.overview}
-                    </Typography>
-                    {isActive && <MovieCrew filmId={item.id} /> }
+                    <Box>
+                      <Typography variant='h4' color='#fff' fontWeight={300} margin='20px 0'>
+                        {item.title}
+                      </Typography>
+                      {isActive && <MovieCrew filmId={item.id} /> }
+                      <Typography variant='h6' color='#fff' fontWeight={300} style={{
+                        'overflow': 'hidden',
+                        'display': '-webkit-box',
+                        '-webkit-line-clamp': '6',
+                        '-webkit-box-orient': 'vertical',
+                      }}>
+                        {item.overview}
+                      </Typography>
+                    </Box>
                   </Grid>
                   <Grid item position='absolute' bottom={20}>
                     <Button variant='contained' size='large' sx={{
@@ -70,8 +108,16 @@ export default function Slider () {
                     </Button>
                   </Grid>
                 </Grid>
-                <Grid container item xs={3} md={3} display='flex'  marginTop='30px'>
-                  <img src={imageUrl + item.poster_path} alt="Poster" width='80%'/>
+                <Grid container item xs={12} md={5}
+                  display='flex'
+                  height='100%'
+                  px='45px'
+                  py='20px'>
+                  <img src={imageUrl + item.poster_path} alt="Poster" style={{
+                    'maxWidth': '100%',
+                    'maxHeight': '100%',
+                    'margin':'auto'
+                  }}/>
                 </Grid>
               </Grid>
             )}

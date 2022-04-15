@@ -3,10 +3,9 @@ import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import {config} from "../../api/config";
 import Typography from "@mui/material/Typography";
 import {useNavigate} from "react-router-dom";
-import Box from "@mui/material/Box";
 const width = "w500";
 
-export function TrendingMovieCard ({item}) {
+export function TrendingCard ({item}) {
   const movieReleaseYear = (date) => new Date(date).getFullYear();
   const navigate = useNavigate();
   return (

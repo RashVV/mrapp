@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useMoviesCredits} from "../../hooks/moviesCredits.hook";
 import {List, ListItem} from "@mui/material";
 

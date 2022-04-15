@@ -1,5 +1,7 @@
 .mySwiper {
-background: black;
+    background: black;
+    z-index: 0;
+    max-height: 600px;
 }
 .swiper-slide {
     background-size: cover;

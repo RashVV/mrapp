@@ -5,11 +5,13 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {TrendingCard} from "./TrendingCard";
+import {useNavigate} from "react-router-dom";
 
 export function TrendingMovieList() {
+  const navigate = useNavigate();
   const [alignment, setAlignment] = useState('day');
-  const {trendingMovieResponse} = useTrendingList({alignment}, 'movie');
 
+  const {trendingMovieResponse} = useTrendingList({alignment}, 'movie');
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
@@ -32,7 +34,9 @@ export function TrendingMovieList() {
           overflowX: 'scroll',  flexDirection: "column"}}>
         { trendingMovieResponse && trendingMovieResponse.results.map(item => {
           return (
-            <TrendingCard item={item} key={item.id}/>
+            <TrendingCard item={item} key={item.id} handleClick={() => {
+              navigate(`/movie/${item.id}`);
+            } }/>
           );
         })
         }

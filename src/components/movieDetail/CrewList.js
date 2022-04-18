@@ -5,10 +5,10 @@ import './movieMainInfo.css';
 export function CrewList({movieCreditsResponse}) {
   let movieCrew = movieCreditsResponse.crew;
   function getDirector (crew) {
-    return crew.find(item => (item.job === 'Director'));
+    return crew.find(item => (item.job === 'Director' ));
   }
   function getWriter (crew) {
-    return crew.find(item => (item.job === 'Writer' || item.job === 'Screenplay'));
+    return crew.find(item => (item.job === 'Writer' || item.job === 'Screenplay'|| item.department === 'Writing'));
   }
   return (
     <>

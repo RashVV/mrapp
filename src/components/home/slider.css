@@ -1,0 +1,12 @@
+.mySwiper {
+    background: black;
+    z-index: 0;
+    max-height: 600px;
+}
+.swiper-slide {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+}

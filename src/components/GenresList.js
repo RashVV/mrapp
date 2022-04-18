@@ -30,7 +30,7 @@ export function GenresList() {
     if(selectedGenres.length){
       dispatch(filterByGenres(selectedGenres));
     }
-  }, [selectedGenres]);
+  }, [selectedGenres, dispatch]);
 
   const handleChange = (event) => {
     const {

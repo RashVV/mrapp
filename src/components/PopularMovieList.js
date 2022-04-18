@@ -19,9 +19,14 @@ export function PopularMovieList() {
   };
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
-  useEffect(()=>{
+  const getFirstPage = () => {
     fetchCollectionByPageAction(1, dispatch);
+  };
+
+  useEffect(()=>{
+    getFirstPage();
   }, []);
+
   const genresFilter = function (film) {
     return film.genre_ids.some(function (genreId) {
       return selectedGenres.some(function (selected) {

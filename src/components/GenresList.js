@@ -1,7 +1,8 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
-import Context from "../context/context";
 import {useGenresList} from "../hooks/genresList.hook";
+import {useDispatch} from "react-redux";
+import {filterByGenres} from "../redux/actions";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -18,7 +19,7 @@ export function GenresList() {
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const {response} = useGenresList();
-  const {dispatchFilterByGenres} = useContext(Context);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (response !== null) {
@@ -27,9 +28,9 @@ export function GenresList() {
 
   useEffect(() => {
     if(selectedGenres.length){
-      dispatchFilterByGenres(selectedGenres);
+      dispatch(filterByGenres(selectedGenres));
     }
-  }, [selectedGenres, dispatchFilterByGenres]);
+  }, [selectedGenres]);
 
   const handleChange = (event) => {
     const {

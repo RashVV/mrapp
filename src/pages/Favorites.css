@@ -27,3 +27,16 @@
 .Fav__filter__order {
     padding-right: 1rem;
 }
+.Fav_card {
+    border: 1px solid #6c6f70;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+.Fav__control {
+    display: flex;
+    justify-content: space-between;
+}.Fav_img {
+    height: 7rem;
+    width: 6rem;
+}

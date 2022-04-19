@@ -21,3 +21,13 @@ export const fetchCollectionByPageAction = async (page, dispatch) => {
   );
 };
 
+export const fetchCollectionTVByPageAction = async (page, dispatch) => {
+  const popularMovieUrl = 'tv/popular';
+  const pageUrl = `${popularMovieUrl}?page=${page}`;
+  const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
+  const response = await pageData.json();
+  return dispatch(
+    { type: 'collectionByPage', payload: response}
+  );
+};
+

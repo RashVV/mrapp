@@ -13,7 +13,7 @@ import MyCalendars from './pages/MyCalendars';
 import MySeries from './pages/MySeries';
 import News from './pages/News';
 import Online from './pages/Online';
-import Popular from './pages/Popular';
+import {Popular} from './pages/Popular';
 import Premieres from './pages/Premieres';
 import Recommendations from './pages/Recommendations';
 import Reviews from './pages/Reviews';

@@ -1,8 +1,9 @@
-import React, {useContext} from "react";
+import React, {useEffect} from "react";
 import {MovieCard} from "./MovieCard";
-import Context from "../context/context";
 import {Grid, Typography} from "@mui/material";
 import {PaginationList} from "./PaginationList";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCollectionByPageAction} from "../redux/actions";
 export function PopularMovieList() {
   const {
     collection,
@@ -11,10 +12,17 @@ export function PopularMovieList() {
     filterBy,
     searchActive,
     searchResult,
-  } = useContext(Context);
-
+  } = useSelector((state) => state.popularMovies);
+  const dispatch = useDispatch();
+  const pageChangeHandler = (event, page) => {
+    fetchCollectionByPageAction(page, dispatch);
+  };
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
+
+  useEffect(()=>{
+    fetchCollectionByPageAction(1, dispatch);
+  }, [dispatch]);
 
   const genresFilter = function (film) {
     return film.genre_ids.some(function (genreId) {
@@ -87,7 +95,7 @@ export function PopularMovieList() {
               justifyContent: 'center',
               margin: "0 0 20px 20px"
             }}>
-              <PaginationList />
+              <PaginationList pageChangeHandler={pageChangeHandler} />
             </Grid>
           </Grid>
       }

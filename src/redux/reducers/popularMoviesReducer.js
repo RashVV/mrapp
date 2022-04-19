@@ -1,4 +1,14 @@
-export function reducer(state, action) {
+const initialState = {
+  collection: [],
+  searchResult: [],
+  sortBy: "",
+  filterBy: "",
+  selectedGenres: [],
+  searchActive: false,
+  page: 1,
+  totalPages: 1
+};
+export function popularMoviesReducer(state = initialState, action) {
   switch (action.type) {
   case "descending":
     return {...state, sortBy: 'descending'};
@@ -7,9 +17,7 @@ export function reducer(state, action) {
   case "filterByGenres":
     return {...state, filterBy: 'filterByGenres', selectedGenres: action.payload};
   case "search":
-    return {...state, searchResult: action.payload ?? []};
-  case "searchActive":
-    return {...state, searchActive: !!action.payload };
+    return {...state, searchActive: !!action.payload, searchResult: action.payload ?? []};
   case "collectionByPage":
     return {
       ...state,

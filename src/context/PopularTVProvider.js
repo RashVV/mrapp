@@ -1,7 +1,7 @@
 import React, {useEffect, useReducer} from "react";
 import Context from "./context";
 import {reducer} from "./reducer";
-import {fetchCollectionTVByPageAction, fetchSearchAction} from "./actions";
+import {fetchCollectionTVByPageAction, fetchTVSearchAction} from "./actions";
 
 const initialState = {
   collection: [],
@@ -30,7 +30,7 @@ const PopularTVProvider = ({children}) => {
 
   const dispatchSearch = (phrase) => {
     dispatch({type: 'searchActive', payload: phrase});
-    fetchSearchAction(phrase, dispatch);
+    fetchTVSearchAction(phrase, dispatch);
   };
 
   const dispatchChangedPage = (page) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import {PopularTVList} from "../components/PopularTVList";
-import {Sort} from "../components/Sort";
+import {TVSort} from "../components/TVSort";
 import {PopularTVProvider} from "../context/PopularTVProvider";
 import {Paper} from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -16,7 +16,7 @@ export function Popular () {
           </Grid>
           <Grid container item xs={12} >
             <Grid item xs={12} md={3} sx={{margin: "0 0 20px 0"}}>
-              <Sort/>
+              <TVSort/>
             </Grid>
             <Grid container item xs={12} md={9}>
               <PopularTVList/>

@@ -31,3 +31,13 @@ export const fetchCollectionTVByPageAction = async (page, dispatch) => {
   );
 };
 
+export const fetchTVSearchAction = async (query, dispatch) => {
+  const baseSearchUrl  = 'search/tv';
+  const searchUrl = `${baseSearchUrl}?query=${query}`;
+  const searchData = await fetch(`${config.api_base_url}${searchUrl}&api_key=${config.api_key}`);
+  const response = await searchData.json();
+  return dispatch(
+    { type: 'search', payload: response.results}
+  );
+};
+

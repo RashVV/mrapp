@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {MovieCard} from "./MovieCard";
+import {TVCard} from "./TVCard";
 import Context from "../context/context";
 import {Grid, Typography} from "@mui/material";
 import {PaginationList} from "./PaginationList";
@@ -16,8 +16,8 @@ export function PopularTVList() {
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
 
-  const genresFilter = function (film) {
-    return film.genre_ids.some(function (genreId) {
+  const genresFilter = function (tv) {
+    return tv.genre_ids.some(function (genreId) {
       return selectedGenres.some(function (selected) {
         return genreId === selected.id;
       });
@@ -67,7 +67,7 @@ export function PopularTVList() {
           {
             searchResult && searchResult.length > 0 && searchResult.map((item, index) => {
               return (
-                <MovieCard item={item}/>
+                <TVCard item={item}/>
               );
             })
           }
@@ -78,7 +78,7 @@ export function PopularTVList() {
             <Grid container item xs={12}>
               {list && list.map((item, index) => {
                 return (
-                  <MovieCard item={item}/>
+                  <TVCard item={item}/>
                 );
               }
               )}

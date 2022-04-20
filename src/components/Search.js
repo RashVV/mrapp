@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Box, FormControl, InputAdornment, OutlinedInput} from "@mui/material";
-import Context from "../context/context";
 import SearchIcon from '@mui/icons-material/Search';
+import {useDispatch} from "react-redux";
+import {fetchSearchAction} from "../redux/actions";
 
 export function Search() {
-  const {dispatchSearch} = useContext(Context);
+  const dispatch = useDispatch();
   return (
     <Box component="form" noValidate autoComplete="off"  >
       <FormControl sx={{width: '100%'}}>
@@ -14,7 +15,7 @@ export function Search() {
               <SearchIcon />
             </InputAdornment>
           }
-          onChange={(e) =>dispatchSearch(e.target.value)}/>
+          onChange={(e) => fetchSearchAction(e.target.value, dispatch)}/>
       </FormControl>
     </Box>
   );

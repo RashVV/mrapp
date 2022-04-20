@@ -1,8 +1,9 @@
-import React, {useContext} from "react";
+import React, {useEffect} from "react";
 import {TVCard} from "./TVCard";
-import Context from "../context/context";
 import {Grid, Typography} from "@mui/material";
 import {PaginationList} from "./PaginationList";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCollectionTVByPageAction} from "../redux/actions";
 export function PopularTVList() {
   const {
     collection,
@@ -11,13 +12,20 @@ export function PopularTVList() {
     filterBy,
     searchActive,
     searchResult,
-  } = useContext(Context);
-
+  } = useSelector((state) => state.popularMovies);
+  const dispatch = useDispatch();
+  const pageChangeHandler = (event, page) => {
+    fetchCollectionTVByPageAction(page, dispatch);
+  };
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
 
-  const genresFilter = function (tv) {
-    return tv.genre_ids.some(function (genreId) {
+  useEffect(()=>{
+    fetchCollectionTVByPageAction(1, dispatch);
+  }, [dispatch]);
+
+  const genresFilter = function (film) {
+    return film.genre_ids.some(function (genreId) {
       return selectedGenres.some(function (selected) {
         return genreId === selected.id;
       });
@@ -87,7 +95,7 @@ export function PopularTVList() {
               justifyContent: 'center',
               margin: "0 0 20px 20px"
             }}>
-              <PaginationList />
+              <PaginationList pageChangeHandler={pageChangeHandler} />
             </Grid>
           </Grid>
       }

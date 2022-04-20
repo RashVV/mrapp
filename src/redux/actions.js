@@ -6,9 +6,10 @@ export const fetchSearchAction = async (query, dispatch) => {
   const searchUrl = `${baseSearchUrl}?query=${query}`;
   const searchData = await fetch(`${config.api_base_url}${searchUrl}&api_key=${config.api_key}`);
   const response = await searchData.json();
-  return dispatch(
-    { type: 'search', payload: response.results}
-  );
+  dispatch({
+    type: 'search',
+    payload: response.results
+  });
 };
 
 export const fetchCollectionByPageAction = async (page, dispatch) => {
@@ -16,9 +17,10 @@ export const fetchCollectionByPageAction = async (page, dispatch) => {
   const pageUrl = `${popularMovieUrl}?page=${page}`;
   const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
   const response = await pageData.json();
-  return dispatch(
-    { type: 'collectionByPage', payload: response}
-  );
+  dispatch({
+    type: 'collectionByPage',
+    payload: response
+  });
 };
 
 export const fetchCollectionTVByPageAction = async (page, dispatch) => {
@@ -41,3 +43,21 @@ export const fetchTVSearchAction = async (query, dispatch) => {
   );
 };
 
+export const descending = () => {
+  return {
+    type: 'descending'
+  };
+};
+
+export const ascending = () => {
+  return {
+    type: 'ascending'
+  };
+};
+
+export const filterByGenres = (selected) => {
+  return {
+    type: 'filterByGenres',
+    payload: selected
+  };
+};

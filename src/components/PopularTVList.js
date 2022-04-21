@@ -17,15 +17,15 @@ export function PopularTVList() {
   const pageChangeHandler = (event, page) => {
     fetchCollectionTVByPageAction(page, dispatch);
   };
-  const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
-  const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
+  const sortByDesc = (a, b) => new Date(b.first_air_date) - new Date(a.first_air_date);
+  const sortByAsc = (a, b) => new Date(a.first_air_date) - new Date(b.first_air_date);
 
   useEffect(()=>{
     fetchCollectionTVByPageAction(1, dispatch);
   }, [dispatch]);
 
-  const genresFilter = function (film) {
-    return film.genre_ids.some(function (genreId) {
+  const genresFilter = function (show) {
+    return show.genre_ids.some(function (genreId) {
       return selectedGenres.some(function (selected) {
         return genreId === selected.id;
       });

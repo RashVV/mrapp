@@ -1,5 +1,6 @@
 import {config
 } from '../api/config';
+import { getUserAccount } from "../auth/authorization";
 
 export const fetchSearchAction = async (query, dispatch) => {
   const baseSearchUrl  = 'search/movie';
@@ -41,3 +42,20 @@ export const filterByGenres = (selected) => {
     payload: selected
   };
 };
+
+export const isAuth = async (dispatch) => {
+  const sessionId = localStorage.getItem("userSessionId");
+  if(sessionId !== null) {
+    const accountInfo = await getUserAccount(sessionId);
+    dispatch( {
+      type: 'authorized',
+      payload: accountInfo.data
+    });
+  }
+  // else {
+  //   return {
+  //     type: 'not_authorized'
+  //   };
+  // }
+};
+

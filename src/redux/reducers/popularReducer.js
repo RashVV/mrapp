@@ -8,7 +8,7 @@ const initialState = {
   page: 1,
   totalPages: 1
 };
-export function popularTVReducer(state = initialState, action) {
+export function popularReducer(state = initialState, action) {
   switch (action.type) {
   case "descending":
     return {...state, sortBy: 'descending'};
@@ -19,7 +19,10 @@ export function popularTVReducer(state = initialState, action) {
   case "search":
     return {...state, searchActive: !!action.payload, searchResult: action.payload ?? []};
   case "collectionByPage":
-    return {...state, page: action.payload.page, collection:  action.payload.results
+    return {
+      ...state,
+      page: action.payload.page,
+      collection:  action.payload.results
     };
   default:
     return {...state};  }

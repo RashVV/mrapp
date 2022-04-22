@@ -12,7 +12,7 @@ export function PopularTVList() {
     filterBy,
     searchActive,
     searchResult,
-  } = useSelector((state) => state.popularMovies);
+  } = useSelector((state) => state.popular);
   const dispatch = useDispatch();
   const pageChangeHandler = (event, page) => {
     fetchCollectionTVByPageAction(page, dispatch);
@@ -70,7 +70,7 @@ export function PopularTVList() {
           <Grid item xs={12}><Typography sx={{mb: 2, px: 2}} variant='h4'>Search Result:</Typography></Grid>
           {
             searchResult && !searchResult.length &&
-              <Typography variant='h6' sx={{px: 2}}>Films are not found</Typography>
+              <Typography variant='h6' sx={{px: 2}}>TV shows are not found</Typography>
           }
           {
             searchResult && searchResult.length > 0 && searchResult.map((item, index) => {

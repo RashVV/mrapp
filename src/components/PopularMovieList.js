@@ -12,7 +12,7 @@ export function PopularMovieList() {
     filterBy,
     searchActive,
     searchResult,
-  } = useSelector((state) => state.popularMovies);
+  } = useSelector((state) => state.popular);
   const dispatch = useDispatch();
   const pageChangeHandler = (event, page) => {
     fetchCollectionByPageAction(page, dispatch);

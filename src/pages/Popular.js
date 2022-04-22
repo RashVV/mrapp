@@ -5,7 +5,7 @@ import {Paper} from "@mui/material";
 import Grid from "@mui/material/Grid";
 import '../App.css';
 
-export function Popular () {
+export default function Popular () {
   return (
     <Paper >
       <Grid container >

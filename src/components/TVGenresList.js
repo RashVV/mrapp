@@ -2,17 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
 import Context from "../context/context";
 import {useTVGenresList} from "../hooks/TVgenresList.hook";
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
+import MenuProps from "../utils/dry";
 
 export function TVGenresList() {
   const [genres, setGenres] = useState([]);

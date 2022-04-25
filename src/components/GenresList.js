@@ -3,7 +3,7 @@ import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} fro
 import {useGenresList} from "../hooks/genresList.hook";
 import {useDispatch} from "react-redux";
 import {filterByGenres} from "../redux/actions";
-import MenuProps from "../utils/dry";
+import MenuProps from "../utils/filter";
 
 export function GenresList() {
   const [genres, setGenres] = useState([]);

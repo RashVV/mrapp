@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
 import Context from "../context/context";
 import {useTVGenresList} from "../hooks/TVgenresList.hook";
-import MenuProps from "../utils/dry";
+import MenuProps from "../utils/filter";
 
 export function TVGenresList() {
   const [genres, setGenres] = useState([]);

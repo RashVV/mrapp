@@ -2,7 +2,7 @@ import React from "react";
 import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import "./movieCard.css";
 import Typography from "@mui/material/Typography";
-import formatDate from "../utils/dry";
+import formatDate from "../utils/filter";
 import {config} from "../api/config";
 import {PercentCircle} from "./PercentCircle";
 import {useNavigate} from "react-router-dom";

@@ -12,9 +12,12 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {createSession} from "../../auth/authorization";
 import {useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {createSessionId, errorReset} from "../../redux/actions";
+import FormHelperText from '@mui/material/FormHelperText';
+import {FormControl} from "@mui/material";
 
 const theme = createTheme();
 
@@ -24,11 +27,16 @@ export default function SignIn() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
+    isError && dispatch(errorReset());
     setForm({...form, [event.target.name]: event.currentTarget.value});
   };
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-
+  const {
+    isError,
+    errorText
+  } = useSelector((state) => state.accountInformation);
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -48,7 +56,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
               Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, zIndex: 0}}>
+          <FormControl error={isError} onSubmit={handleSubmit} sx={{ mt: 1, zIndex: 0, width:'100%'}}>
             <TextField
               margin="normal"
               required
@@ -59,6 +67,7 @@ export default function SignIn() {
               autoComplete="username"
               autoFocus
               onChange={handleSubmit}
+              error={isError}
             />
             <TextField
               margin="normal"
@@ -70,6 +79,7 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
               onChange={handleSubmit}
+              error={isError}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -80,21 +90,16 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={async ()=> {
-                const result = await createSession(form.username, form.password);
-                if (result !== null) {
-                  if(location.state?.from) {
-                    navigate(location.state.from);
-                  }
-                }
+              onClick={(e)=> {
+                dispatch(createSessionId(form.username, form.password, location, navigate));
               }}
             >
                 Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
+            <Grid container direction="column">
+              <Grid item>
                 <Link href="#" variant="body2">
-                    Forgot password?
+                  Forgot password?
                 </Link>
               </Grid>
               <Grid item>
@@ -103,7 +108,10 @@ export default function SignIn() {
                 </Link>
               </Grid>
             </Grid>
-          </Box>
+            <Box>
+              {isError && <FormHelperText> <strong> Sign in failed with message: </strong> {errorText} </FormHelperText>}
+            </Box>
+          </FormControl>
         </Box>
       </Container>
     </ThemeProvider>

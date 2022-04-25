@@ -15,7 +15,7 @@ export function Search() {
               <SearchIcon />
             </InputAdornment>
           }
-          onChange={(e) => fetchSearchAction(e.target.value, dispatch)}/>
+          onChange={(e) => dispatch(fetchSearchAction(e.target.value))}/>
       </FormControl>
     </Box>
   );

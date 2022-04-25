@@ -29,8 +29,17 @@ import {MoviesPage} from "./pages/MoviesPage";
 import {PopularMovies} from "./pages/PopularMovies";
 import {DetailPage} from "./pages/detailPage";
 import {MainPage} from "./pages/mainPage";
+import {useEffect} from "react";
+import {isAuth} from "./redux/actions";
+import {useDispatch} from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(  () => {
+    dispatch(isAuth());
+  }, [dispatch]);
+
   return (
     <div>
       <Header />

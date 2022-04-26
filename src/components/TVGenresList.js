@@ -1,15 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select} from "@mui/material";
-import {useGenresList} from "../hooks/genresList.hook";
-import {useDispatch} from "react-redux";
-import {filterByGenres} from "../redux/actions";
+import Context from "../context/context";
+import {useTVGenresList} from "../hooks/TVgenresList.hook";
 import MenuProps from "../utils/filter";
 
-export function GenresList() {
+export function TVGenresList() {
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const {response} = useGenresList();
-  const dispatch = useDispatch();
+  const {response} = useTVGenresList();
+  const {dispatchFilterByGenres} = useContext(Context);
 
   useEffect(() => {
     if (response !== null) {
@@ -18,9 +17,9 @@ export function GenresList() {
 
   useEffect(() => {
     if(selectedGenres.length){
-      dispatch(filterByGenres(selectedGenres));
+      dispatchFilterByGenres(selectedGenres);
     }
-  }, [selectedGenres, dispatch]);
+  }, [selectedGenres, dispatchFilterByGenres]);
 
   const handleChange = (event) => {
     const {

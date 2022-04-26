@@ -1,9 +1,26 @@
-import React from 'react';
+import React from "react";
+import {PopularTVList} from "../components/PopularTVList";
+import {TVSort} from "../components/TVSort";
+import {Paper} from "@mui/material";
+import Grid from "@mui/material/Grid";
+import '../App.css';
 
-function Popular() {
+export default function Popular () {
   return (
-    <div>Popular</div>
+    <Paper >
+      <Grid container >
+        <Grid xs={12} item>
+          <p className="text">Popular TV Shows</p>
+        </Grid>
+        <Grid container item xs={12} >
+          <Grid item xs={12} md={3} sx={{margin: "0 0 20px 0"}}>
+            <TVSort/>
+          </Grid>
+          <Grid container item xs={12} md={9}>
+            <PopularTVList/>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 }
-
-export default Popular;

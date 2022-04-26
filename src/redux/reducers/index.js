@@ -5,7 +5,6 @@ import {popularTVReducer} from "./popularTVReducer";
 
 
 const allReducers = combineReducers({
-  popularMovies: popularMoviesReducer,
   accountInformation: userAccountReducer,
   popularMovies: popularMoviesReducer,
   popularTVs: popularTVReducer

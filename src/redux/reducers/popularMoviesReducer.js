@@ -8,7 +8,7 @@ const initialState = {
   page: 1,
   totalPages: 1
 };
-export function popularReducer(state = initialState, action) {
+export function popularMoviesReducer(state = initialState, action) {
   switch (action.type) {
   case "descending":
     return {...state, sortBy: 'descending'};

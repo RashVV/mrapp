@@ -1,8 +1,11 @@
 import {combineReducers} from "redux";
-import {popularReducer} from "./popularReducer";
+import {popularMoviesReducer} from "./popularMoviesReducer";
+import {popularTVReducer} from "./popularTVReducer";
+
 
 const allReducers = combineReducers({
-  popular: popularReducer
+  popularMovies: popularMoviesReducer,
+  popularTVs: popularTVReducer
 });
 
 export default allReducers;

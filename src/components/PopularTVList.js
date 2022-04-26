@@ -12,7 +12,7 @@ export function PopularTVList() {
     filterBy,
     searchActive,
     searchResult,
-  } = useSelector((state) => state.popular);
+  } = useSelector((state) => state.popularTVs);
   const dispatch = useDispatch();
   const pageChangeHandler = (event, page) => {
     fetchCollectionTVByPageAction(page, dispatch);

@@ -30,6 +30,26 @@ export const fetchCollectionByPageAction = (page) => {
   };
 };
 
+export const fetchCollectionTVByPageAction = async (page, dispatch) => {
+  const popularTVUrl = 'tv/popular';
+  const pageUrl = `${popularTVUrl}?page=${page}`;
+  const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
+  const response = await pageData.json();
+  return dispatch(
+    { type: 'collectionByPage', payload: response}
+  );
+};
+
+export const fetchTVSearchAction = async (query, dispatch) => {
+  const baseSearchUrl  = 'search/tv';
+  const searchUrl = `${baseSearchUrl}?query=${query}`;
+  const searchData = await fetch(`${config.api_base_url}${searchUrl}&api_key=${config.api_key}`);
+  const response = await searchData.json();
+  return dispatch(
+    { type: 'search', payload: response.results}
+  );
+};
+
 export const descending = () => {
   return {
     type: 'descending'

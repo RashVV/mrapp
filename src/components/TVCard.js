@@ -8,13 +8,13 @@ import {PercentCircle} from "./PercentCircle";
 import {useNavigate} from "react-router-dom";
 const width = "w300";
 
-export function MovieCard({item}) {
+export function TVCard({item}) {
   const navigate = useNavigate();
   
   return (
     <Card className="card"
       onClick={() => {
-        navigate(`/movie/${item.id}`);
+        navigate(`/tv/${item.id}`);
       } }
     >
       <CardActionArea>
@@ -25,10 +25,10 @@ export function MovieCard({item}) {
             sx={{
               fontWeight: "600"
             }}>
-            {item.title}
+            {item.name}
           </Typography>
           <Typography variant="subtitle1">
-            {formatDate(item.release_date)}
+            {formatDate(item.first_air_date)}
           </Typography>
         </CardContent>
       </CardActionArea>

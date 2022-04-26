@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import {Divider, ListItem, ListItemButton, ListItemText, Paper} from "@mui/material";
 import {Filter} from "./Filter";
-import {Search} from "./Search";
+import {TVSearch} from "./TVSearch";
 import Grid from "@mui/material/Grid";
 import SortIcon from '@mui/icons-material/Sort';
 import {useDispatch} from "react-redux";
 import {ascending, descending} from "../redux/actions";
 
 
-export function Sort() {
+export function TVSort() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -18,7 +18,7 @@ export function Sort() {
     <>
       <Grid container >
         <Grid item sx={{margin: "0 0 50px 0", width: "100%"}}>
-          <Search />
+          <TVSearch />
         </Grid>
       </Grid>
       <Grid container>

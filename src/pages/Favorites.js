@@ -1,15 +1,15 @@
 import React from 'react';
 import './Favorites.css';
-import { useFavoritMovies } from '../hooks/favoritMovies.hook';
-import {useParams} from "react-router-dom";
+//import { useFavoritMovies } from '../hooks/favoritMovies.hook';
+//import {useParams} from "react-router-dom";
 
 const MovieCounter = 4;
 const TVCounter = 0;
 function Favorites() {
-  const params = useParams();
-  const filmId = params.id;
-  const account_id = '76341';
-  const {FavoritMoviesResponse, error} = useFavoritMovies({account_id});
+  //const params = useParams();
+  // const filmId = params.id;
+  //const account_id = '76341';
+  // const {FavoritMoviesResponse, error} = useFavoritMovies({account_id});
   return (
     <div className='page__container'>
       <div className='page__header'>
@@ -28,7 +28,7 @@ function Favorites() {
       </div>
       <div>
         <div className='Fav_card'>
-          <img src='logo' className='Fav_img'></img>
+          <img src='logo' alt='' className='Fav_img'></img>
           <div className='Fav__description'>
             <icon></icon>
             <h1>Name</h1>

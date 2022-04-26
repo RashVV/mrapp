@@ -8,8 +8,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import {Collapse, List, ListItemButton, ListItemText} from "@mui/material";
 import {ExpandLess, ExpandMore} from "@mui/icons-material";
-import {userLogout} from "../../redux/actions";
-import {useCallback} from "react";
+import {userLogoutAction} from "../../redux/actions";
+import {useCallback, useState} from "react";
 
 export default function FormDialog() {
   const {
@@ -19,13 +19,13 @@ export default function FormDialog() {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
   };
   const onClickCallback = useCallback(() => {
-    dispatch(userLogout());
-  },[dispatch] );
+    dispatch(userLogoutAction());
+  },[dispatch]);
   return (
     <>
       {isAuthorized &&
@@ -38,7 +38,7 @@ export default function FormDialog() {
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding sx={{display: 'flex'}}>
                 <ListItemButton sx={{ pl: 4 }} onClick={onClickCallback}>
-                  <ListItemText primary='Log out' />
+                  <ListItemText primary="Log out" />
                 </ListItemButton>
               </List>
             </Collapse>

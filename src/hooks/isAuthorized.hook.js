@@ -1,4 +1,7 @@
+import {useSelector} from "react-redux";
+
 export const useIsAuthorized = () => {
-  return localStorage.getItem("userSessionId") === null ? false : true;
+  const {isAuthorized} = useSelector((state) => state.accountInformation);
+  return isAuthorized;
 };
 

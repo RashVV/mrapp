@@ -1,12 +1,6 @@
 import {config
 } from '../api/config';
-import axios from "axios";
-
-const userAccountUrl = 'account';
-const requestTokenUrl = 'authentication/token/new';
-const sessionWithLoginUrl = 'authentication/token/validate_with_login';
-const newSessionUrl = 'authentication/session/new';
-const storageName = 'userSessionId';
+import {getAccount, getSessionId, getSessionWithLogin, getToken} from "../auth/authorizationRequests";
 
 export const fetchSearchAction = (query) => {
   return async (dispatch) => {
@@ -55,84 +49,60 @@ export const filterByGenres = (selected) => {
   };
 };
 
-export const isAuth = () => {
-  return (dispatch) => {
+export const isAuthAction = () => {
+  return async (dispatch) => {
     const sessionId = localStorage.getItem("userSessionId");
     if (sessionId !== null) {
-      axios.get(
-        `${config.api_base_url}${userAccountUrl}?api_key=${config.api_key}&session_id=${sessionId}`).then(value =>
-      {
+      const userAccountResponse = await getAccount(sessionId);
+      if (userAccountResponse !== null) {
         dispatch({
           type: 'authorized',
-          payload: value.data
+          payload: userAccountResponse.data
         });
-      });
+      }
     }
   };
 };
 
-export const createSessionId = (username, password, location, navigate) => {
+export const createSessionIdAction = (username, password, location, navigate) => {
   return async (dispatch) => {
     try {
-      const tokenData = await axios.get(`${config.api_base_url}${requestTokenUrl}?api_key=${config.api_key}`);
-      const tokenResponse = tokenData.data;
-
-      if (tokenResponse !== null) {
-        const sessionWithLogin = await axios.post(`${config.api_base_url}${sessionWithLoginUrl}?api_key=${config.api_key}`,
-          {username: username, password: password, request_token: tokenResponse.request_token});
-        const sessionWithLoginResponse = sessionWithLogin.data;
-
-        if (sessionWithLoginResponse.success) {
-          const newSession = await axios.post(`${config.api_base_url}${newSessionUrl}?api_key=${config.api_key}`,
-            {request_token: sessionWithLoginResponse.request_token});
-          const newSessionResponse = newSession.data;
-
-          if (newSessionResponse && newSessionResponse.success) {
-            localStorage.setItem(storageName, newSessionResponse.session_id);
-            const userSessionId = newSessionResponse.session_id;
-
-            if (userSessionId !== null) {
-              const userAccount = await axios.get(
-                `${config.api_base_url}${userAccountUrl}?api_key=${config.api_key}&session_id=${userSessionId}`);
-
-              if (userAccount !== null) {
-                dispatch({
-                  type: 'authorized',
-                  payload: userAccount.data
-                });
-
-                if (location.state?.from) {
-                  navigate(location.state.from);
-                }
-              }
-            }
-          }
+      const tokenResponse = await getToken();
+      const sessionWithLoginResponse = await getSessionWithLogin(username, password, tokenResponse);
+      const userSessionId = await getSessionId(sessionWithLoginResponse);
+      const userAccount = await getAccount(userSessionId);
+      if (userAccount !== null) {
+        dispatch({
+          type: 'authorized',
+          payload: userAccount.data
+        });
+        if (location.state?.from) {
+          navigate(location.state.from);
         }
       }
     }
     catch (e) {
-      debugger;
-      dispatch(loginFailure(e.response.data.status_message));
+      dispatch(loginFailureAction(e.response.data.status_message));
     }
   };
 };
 
 
-export const userLogout = () => {
+export const userLogoutAction = () => {
   localStorage.removeItem("userSessionId");
   return {
     type: 'logout'
   };
 };
 
-export const loginFailure = (message) => {
+export const loginFailureAction = (message) => {
   return {
     type: 'loginFailure',
     payload: message
   };
 };
 
-export const errorReset = () => {
+export const errorResetAction = () => {
   return {
     type: 'errorReset'
   };

@@ -1,26 +1,33 @@
 import {config
 } from '../api/config';
+import {getAccount, getSessionId, getSessionWithLogin, getToken} from "../auth/authorizationRequests";
 
-export const fetchSearchAction = async (query, dispatch) => {
-  const baseSearchUrl  = 'search/movie';
-  const searchUrl = `${baseSearchUrl}?query=${query}`;
-  const searchData = await fetch(`${config.api_base_url}${searchUrl}&api_key=${config.api_key}`);
-  const response = await searchData.json();
-  dispatch({
-    type: 'search',
-    payload: response.results
-  });
+export const fetchSearchAction = (query) => {
+  return async (dispatch) => {
+    const baseSearchUrl = 'search/movie';
+    const searchUrl = `${baseSearchUrl}?query=${query}`;
+    const searchData = await fetch(`${config.api_base_url}${searchUrl}&api_key=${config.api_key}`);
+    const response = await searchData.json();
+    if(response) {
+      dispatch({
+        type: 'search',
+        payload: response.results
+      });
+    }
+  };
 };
 
-export const fetchCollectionByPageAction = async (page, dispatch) => {
-  const popularMovieUrl = 'movie/popular';
-  const pageUrl = `${popularMovieUrl}?page=${page}`;
-  const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
-  const response = await pageData.json();
-  dispatch({
-    type: 'collectionByPage',
-    payload: response
-  });
+export const fetchCollectionByPageAction = (page) => {
+  return async (dispatch) => {
+    const popularMovieUrl = 'movie/popular';
+    const pageUrl = `${popularMovieUrl}?page=${page}`;
+    const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
+    const response = await pageData.json();
+    dispatch({
+      type: 'collectionByPage',
+      payload: response
+    });
+  };
 };
 
 export const fetchCollectionTVByPageAction = async (page, dispatch) => {
@@ -59,5 +66,64 @@ export const filterByGenres = (selected) => {
   return {
     type: 'filterByGenres',
     payload: selected
+  };
+};
+
+export const isAuthAction = () => {
+  return async (dispatch) => {
+    const sessionId = localStorage.getItem("userSessionId");
+    if (sessionId !== null) {
+      const userAccountResponse = await getAccount(sessionId);
+      if (userAccountResponse !== null) {
+        dispatch({
+          type: 'authorized',
+          payload: userAccountResponse.data
+        });
+      }
+    }
+  };
+};
+
+export const createSessionIdAction = (username, password, location, navigate) => {
+  return async (dispatch) => {
+    try {
+      const tokenResponse = await getToken();
+      const sessionWithLoginResponse = await getSessionWithLogin(username, password, tokenResponse);
+      const userSessionId = await getSessionId(sessionWithLoginResponse);
+      const userAccount = await getAccount(userSessionId);
+      if (userAccount !== null) {
+        dispatch({
+          type: 'authorized',
+          payload: userAccount.data
+        });
+        if (location.state?.from) {
+          navigate(location.state.from);
+        }
+      }
+    }
+    catch (e) {
+      dispatch(loginFailureAction(e.response.data.status_message));
+    }
+  };
+};
+
+
+export const userLogoutAction = () => {
+  localStorage.removeItem("userSessionId");
+  return {
+    type: 'logout'
+  };
+};
+
+export const loginFailureAction = (message) => {
+  return {
+    type: 'loginFailure',
+    payload: message
+  };
+};
+
+export const errorResetAction = () => {
+  return {
+    type: 'errorReset'
   };
 };

@@ -15,13 +15,13 @@ export function PopularMovieList() {
   } = useSelector((state) => state.popularMovies);
   const dispatch = useDispatch();
   const pageChangeHandler = (event, page) => {
-    fetchCollectionByPageAction(page, dispatch);
+    dispatch(fetchCollectionByPageAction(page));
   };
   const sortByDesc = (a, b) => new Date(b.release_date) - new Date(a.release_date);
   const sortByAsc = (a, b) => new Date(a.release_date) - new Date(b.release_date);
 
   useEffect(()=>{
-    fetchCollectionByPageAction(1, dispatch);
+    dispatch(fetchCollectionByPageAction(1));
   }, [dispatch]);
 
   const genresFilter = function (film) {

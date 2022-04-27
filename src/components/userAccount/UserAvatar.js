@@ -22,12 +22,20 @@ export function UserAvatar({accountResponse}) {
     return color;
   }
 
+  function avatarWithLetters (name) {
+    let arrName = name.split(' ');
+    if(arrName.length < 2) {
+      return `${name.slice(0, 1)}`;
+    } else {
+      return `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
+    }
+  }
   function stringAvatar(name) {
     return {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+      children: avatarWithLetters(name)
     };
   }
 
@@ -37,7 +45,7 @@ export function UserAvatar({accountResponse}) {
         <Avatar src={config.api_img_url + width + userAvatar}/>
       }
       {!userAvatar &&
-      <Avatar {...stringAvatar(accountResponse.name)} />
+      <Avatar {...stringAvatar(accountResponse.name || accountResponse.username)} />
       }
     </>
   );

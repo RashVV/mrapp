@@ -1,41 +1,23 @@
 import React from 'react';
 import Avatar from "@mui/material/Avatar";
 import {config} from "../../api/config";
+import {stringToColor} from "../../utils/userAccount";
 
 const width = 'w500';
 
 export function UserAvatar({accountResponse}) {
   const userAvatar = accountResponse.avatar.tmdb.avatar_path;
-  function stringToColor(string) {
-    let hash = 0;
-    let i;
-    /* eslint-disable no-bitwise */
-    for (i = 0; i < string.length; i += 1) {
-      hash = string.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    let color = '#';
-    for (i = 0; i < 3; i += 1) {
-      const value = (hash >> (i * 8)) & 0xff;
-      color += `00${value.toString(16)}`.slice(-2);
-    }
-    /* eslint-enable no-bitwise */
-    return color;
-  }
 
-  function avatarWithLetters (name) {
-    let arrName = name.split(' ');
-    if(arrName.length < 2) {
-      return `${name.slice(0, 1)}`;
-    } else {
-      return `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
-    }
+  function makeAvatarInitials(name) {
+    let nameAsArray = name.split(' ');
+    return nameAsArray.length < 2 ? `${name.slice(0, 1)}` : `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
   }
   function stringAvatar(name) {
     return {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: avatarWithLetters(name)
+      children: makeAvatarInitials(name)
     };
   }
 

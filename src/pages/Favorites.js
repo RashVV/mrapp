@@ -8,6 +8,7 @@ import { FavoriteCard } from '../components/movieDetail/favorits/FavoriteCard';
 import {MoviesMainInfo} from "../components/movieDetail/MoviesMainInfo";
 import NotFound from "../components/NotFound";
 import {useDispatch, useSelector} from "react-redux";
+import {fetchUserDetailsId} from '../redux/actions';
 
 
 
@@ -24,12 +25,11 @@ function  Favorites () {
   } = useSelector((state) => state.accountInformation);
   const dispatch = useDispatch();
   const favHandler = (event, page) => {
-    fetchCollectionTVByPageAction(page, dispatch);
+    fetchUserDetailsId(page, dispatch);
   };
 
-  const params = useParams();
-  const account_id = params.id;
-  console.log(account_id);
+  //const params = useParams();
+  const account_id = accountResponse.id;
   const { FavoriteMoviesResponse, error } = useFavoriteMovies({account_id});
   const {FavoriteTVsResponse} = useFavoriteTVs({account_id});
   // const MovieCounter = FavoriteMoviesResponse.total_results;

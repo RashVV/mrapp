@@ -107,6 +107,15 @@ export const createSessionIdAction = (username, password, location, navigate) =>
   };
 };
 
+export const fetchUserDetailsId = async (username, dispatch) => {
+  const baseFavoriteUrl  = '/account';
+  const pageUrl = `${baseFavoriteUrl}`;
+  const pageData = await fetch(`${config.api_base_url}${pageUrl}&api_key=${config.api_key}`);
+  const response = await pageData.json();
+  return dispatch(
+    { type: 'userDetailsId', payload: response.id}
+  );
+};
 
 export const userLogoutAction = () => {
   localStorage.removeItem("userSessionId");

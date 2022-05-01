@@ -91,6 +91,7 @@ export const createSessionIdAction = (username, password, location, navigate) =>
       const sessionWithLoginResponse = await getSessionWithLogin(username, password, tokenResponse);
       const userSessionId = await getSessionId(sessionWithLoginResponse);
       const userAccount = await getAccount(userSessionId);
+      debugger
       if (userAccount !== null) {
         dispatch({
           type: 'authorized',
@@ -99,6 +100,8 @@ export const createSessionIdAction = (username, password, location, navigate) =>
         if (location.state?.from) {
           navigate(location.state.from);
         }
+
+        localStorage.setItem('account_id', userAccount.data.id)
       }
     }
     catch (e) {

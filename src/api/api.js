@@ -6,7 +6,8 @@ const API_KEY = config.api_key;
 export const axiosInstance = axios.create({
   baseURL: `${BASE_URL}`,
   params: {
-    api_key: `${API_KEY}`
+    api_key: `${API_KEY}`,
+    session_id: localStorage.getItem('userSessionId'),
   }
 });
 

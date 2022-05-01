@@ -1,5 +1,7 @@
 const initialState = {
-  accountResponse: {},
+  accountResponse: {
+    id: localStorage.getItem('account_id') || null
+  },
   isAuthorized: false,
   isError: false,
   errorText: null

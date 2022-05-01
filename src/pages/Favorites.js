@@ -27,6 +27,7 @@ function  Favorites () {
   const favHandler = (event, page) => {
     fetchUserDetailsId(page, dispatch);
   };
+  debugger
 
   //const params = useParams();
   const account_id = accountResponse.id;
@@ -46,7 +47,7 @@ function  Favorites () {
           return (
             <FavoriteCard item={item}/>
           );
-        })} 
+        })}
 
       </Grid>
     </Grid>
